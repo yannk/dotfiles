@@ -5,6 +5,8 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=vim
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:$PATH
+export MANPATH=/opt/local/man/:$MANPATH
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -95,7 +97,7 @@ esac
 #fi
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if [ -x /usr/bin/dircolors -o -x /opt/local/bin/dircolors ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
