@@ -22,6 +22,10 @@ if has('syntax') && (&t_Co > 2)
     " I *HATE* the default darkblue (unreadable on dark backgrounds)
     hi Comment ctermfg=DarkGreen
   endif
+  " hack that seem to be necessary under screen *sometimes*
+  if (&t_Co < 256 && $TERM =~ '256')
+    set t_Co=256
+  endif
 endif
 
 " fix backspace
