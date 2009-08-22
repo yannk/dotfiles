@@ -12,6 +12,7 @@ _vim:
 _screen:
 	ln -sf  $(DOTFILES)/screen_name     ${HOME}/.screen_name
 	ln -sf  $(DOTFILES)/screenrc        ${HOME}/.screenrc
+	ln -sf  $(DOTFILES)/termcaprc		${HOME}/.termcaprc
 	touch ${HOME}/.screenrc-local
 
 _shell:
