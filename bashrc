@@ -2,6 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
+fi
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=vim
@@ -46,12 +50,12 @@ force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
@@ -105,4 +109,4 @@ if [ -x /usr/bin/dircolors -o -x /opt/local/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib >/dev/null 2>&1)

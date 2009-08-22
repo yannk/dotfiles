@@ -4,6 +4,9 @@ all: _vim _screen _shell
 
 _vim:
 	ln -sf  $(DOTFILES)/vimrc           ${HOME}/.vimrc
+	@if [ -d ${HOME}/.vim -a ! -L ${HOME}/.vim ]; then \
+	    mv -u ${HOME}/.vim ${HOME}/.vim-backup-`date +%Y%m%d%H%M`; \
+	fi
 	ln -snf $(DOTFILES)/vim             ${HOME}/.vim
 
 _screen:
