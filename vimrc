@@ -18,7 +18,7 @@ se incsearch
 if has('syntax') && (&t_Co > 2)
   syntax on
   se hlsearch
-  if (&t_Co <= 8) 
+  if (&t_Co <= 8)
     " I *HATE* the default darkblue (unreadable on dark backgrounds)
     hi Comment ctermfg=DarkGreen
   endif
@@ -28,11 +28,12 @@ if has('syntax') && (&t_Co > 2)
   endif
 endif
 
+" this is sometimes necessary, but thanks it's not for me anymore
 " fix backspace
 "if &term == "screen"
 "  set t_kb=
 "  fixdel
-"endif 
+"endif
 
 " use "[RO]" for "[readonly]" to save space in the message line:
 set shortmess+=r
