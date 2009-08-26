@@ -1,6 +1,10 @@
 DOTFILES := $(shell pwd)
 
-all: _vim _screen _shell
+all: submodules _vim _screen _shell
+
+submodules:
+	git submodule init
+	git submodule update
 
 _vim:
 	ln -sf  $(DOTFILES)/vimrc           ${HOME}/.vimrc
