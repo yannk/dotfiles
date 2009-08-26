@@ -5,7 +5,9 @@
 " Uncomment a bunch of lines: <C-v><select comments>d
 " Move to nth column: n|
 
+filetype on
 filetype plugin on
+filetype indent on
 
 se nocompatible
 
@@ -72,6 +74,8 @@ set autoindent
 set shiftwidth=4
 set shiftround
 set backspace=indent,eol,start
+set ttyfast
+set cursorline " testing to see if I like it
 
 " visual bell
 set vb t_vb=
