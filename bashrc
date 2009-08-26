@@ -96,9 +96,10 @@ esac
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-#if [ -f ~/.bash_aliases ]; then
-#    . ~/.bash_aliases
-#fi
+alias vi=vim
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors -o -x /opt/local/bin/dircolors ]; then

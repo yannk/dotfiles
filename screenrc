@@ -18,4 +18,7 @@ hardstatus string "%10` %{dd} %{r}%n  %{-b dd}%-w%{b}%n* %t%{-}%+w%<"
 term xterm-256color
 shell bash
 
+encoding UTF-8
+defutf8 on
+
 source $HOME/.screenrc-local
