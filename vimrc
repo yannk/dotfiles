@@ -75,7 +75,9 @@ set shiftwidth=4
 set shiftround
 set backspace=indent,eol,start
 set ttyfast
-set cursorline " testing to see if I like it
+if version >= 700
+    set cursorline " testing to see if I like it
+endif
 
 " visual bell
 set vb t_vb=
