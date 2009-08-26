@@ -7,7 +7,7 @@ submodules:
 	git submodule update
 
 git:
-	ln -sf $(DOTFILE)/gitconfig 		${HOME}/.gitconfig
+	ln -sf $(DOTFILES)/gitconfig 		${HOME}/.gitconfig
 
 _vim:
 	ln -sf  $(DOTFILES)/vimrc           ${HOME}/.vimrc
