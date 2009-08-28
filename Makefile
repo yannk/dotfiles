@@ -1,6 +1,9 @@
 DOTFILES := $(shell pwd)
 
-all: git submodules _vim _screen _shell
+all: prep git submodules _vim _screen _shell
+
+prep:
+	@mkdir ~/tmp
 
 submodules:
 	git submodule init
@@ -24,5 +27,6 @@ _screen:
 
 _shell:
 	ln -sf  $(DOTFILES)/bashrc          ${HOME}/.bashrc
+	ln -sf  $(DOTFILES)/bash_profile    ${HOME}/.bash_profile
 	ln -sf  $(DOTFILES)/profile         ${HOME}/.profile
 
