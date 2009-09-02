@@ -110,4 +110,4 @@ if [ -x /usr/bin/dircolors -o -x /opt/local/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib >/dev/null 2>&1)
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib 2>/dev/null)
