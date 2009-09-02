@@ -3,7 +3,7 @@ DOTFILES := $(shell pwd)
 all: prep git submodules _vim _screen _shell
 
 prep:
-	@mkdir ~/tmp
+	-@mkdir ~/tmp
 
 submodules:
 	git submodule init
