@@ -18,6 +18,7 @@ _vim:
 	    mv -u ${HOME}/.vim ${HOME}/.vim-backup-`date +%Y%m%d%H%M`; \
 	fi
 	ln -snf $(DOTFILES)/vim             ${HOME}/.vim
+	cat $(DOTFILES)/vimplaterc | perl -pe 's{\$$HOME}{${HOME}}g' > ${HOME}/.vimplaterc
 
 _screen:
 	ln -sf  $(DOTFILES)/screen_name     ${HOME}/.screen_name
