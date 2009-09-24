@@ -5,11 +5,11 @@
 " Uncomment a bunch of lines: <C-v><select comments>d
 " Move to nth column: n|
 
+se nocompatible
+
 filetype on
 filetype plugin on
 filetype indent on
-
-se nocompatible
 
 colorscheme railscasts
 " colorscheme inkpot
