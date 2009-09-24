@@ -1,6 +1,6 @@
 [% packagename=input("package name: ")
 -%]
-#!/usr/bin/perl
+package [% packagename %];
 use strict;
 use warnings;
 
