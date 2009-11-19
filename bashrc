@@ -9,7 +9,7 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=vim
-export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:~/.vim/bin/:$PATH
 export MANPATH=/opt/local/man/:$MANPATH
 
 # If not running interactively, don't do anything
@@ -110,4 +110,4 @@ if [ -x /usr/bin/dircolors -o -x /opt/local/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib 2>/dev/null)
+eval $(perl -Mlocal::lib)
