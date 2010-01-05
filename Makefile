@@ -6,8 +6,10 @@ prep:
 	-@mkdir ~/tmp
 
 submodules:
-	git submodule init
-	git submodule update
+	if [ -x git ]; then \
+		git submodule init; \
+		git submodule update; \
+	fi
 
 git:
 	ln -sf $(DOTFILES)/gitconfig 		${HOME}/.gitconfig
