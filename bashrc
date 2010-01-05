@@ -116,4 +116,4 @@ _ssh_auth_save() {
 }
 alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
 
-eval $(perl -Mlocal::lib)
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib >/dev/null 2>&1)
