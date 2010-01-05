@@ -110,4 +110,10 @@ if [ -x /usr/bin/dircolors -o -x /opt/local/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+## re-link SSH_AUTH_SOCK before executing screen again
+_ssh_auth_save() {
+    ln -sf "$SSH_AUTH_SOCK" "$HOME/.screen/ssh-auth-sock.$HOSTNAME"
+}
+alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
+
 eval $(perl -Mlocal::lib)

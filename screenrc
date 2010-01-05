@@ -1,4 +1,8 @@
 # Window tabs, second to last line
+#
+unsetenv SSH_AUTH_SOCK
+setenv SSH_AUTH_SOCK $HOME/.screen/ssh-auth-sock.$HOSTNAME
+
 vbell on
 vbell_msg "beeeep"
 
