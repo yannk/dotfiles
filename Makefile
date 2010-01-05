@@ -23,6 +23,7 @@ _vim:
 	cat $(DOTFILES)/vimplaterc | perl -pe 's{\$$HOME}{${HOME}}g' > ${HOME}/.vimplaterc
 
 _screen:
+	-mkdir ${HOME}/.screen
 	ln -sf  $(DOTFILES)/screen_name     ${HOME}/.screen_name
 	ln -sf  $(DOTFILES)/screenrc        ${HOME}/.screenrc
 	ln -sf  $(DOTFILES)/termcaprc		${HOME}/.termcaprc
