@@ -108,6 +108,7 @@ alias vi=vim
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+alias gpg=gpg2
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors -o -x /opt/local/bin/dircolors ]; then
@@ -124,4 +125,4 @@ _ssh_auth_save() {
 }
 alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
 
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib >/dev/null 2>&1)
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib >/dev/null)
