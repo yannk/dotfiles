@@ -8,7 +8,7 @@ function checkgit {
     local gitfile=$(readlink $gitlink)
     local repo=$(dirname $gitfile)
 
-    if [[ -z $repo ]]; then
+    if [ -z $repo ]; then
         echo "cannot determine repo home"
         exit;
     fi;
@@ -24,9 +24,17 @@ function checkgit {
     popd >/dev/null
 }
 
-if [[ -e $markerfile ]]; then
-    eval $(stat -s $markerfile)
-    if [[ $(( $now - $st_mtime > $grace)) ]]; then
+if [ -e $markerfile ]; then
+    ## differences between bsd and linux
+    eval $(stat -s $markerfile 2>/dev/null)
+    if [ -z $st_mtime ]; then
+        st_mtime=$(stat -c "%Y" $markerfile)
+        if [ -z $st_mtime ]; then
+            echo "something is really wrong"
+            exit -1;
+        fi
+    fi
+    if [ $(( $now - $st_mtime > $grace)) ]; then
         checkgit
     else
         echo grace
