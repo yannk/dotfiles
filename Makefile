@@ -33,4 +33,4 @@ _shell:
 	ln -sf  $(DOTFILES)/bashrc          ${HOME}/.bashrc
 	ln -sf  $(DOTFILES)/bash_profile    ${HOME}/.bash_profile
 	ln -sf  $(DOTFILES)/profile         ${HOME}/.profile
-
+	ln -sf  $(DOTFILES)/check_git_dotfiles.sh ${HOME}/.check_git_dotfiles.sh

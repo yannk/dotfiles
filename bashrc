@@ -12,6 +12,11 @@ export EDITOR=vim
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:~/.vim/bin/:$PATH
 export MANPATH=/opt/local/man/:$MANPATH
 
+## check for git dot files in the background
+if [ -f ~/.check_git_dotfiles.sh ]; then
+    (~/.check_git_dotfiles.sh 2>&1 >/dev/null)&
+fi
+
 export DISPLAY=:0.0
 # allow color with standard macosx tools
 export CLICOLOR=1
@@ -83,8 +88,16 @@ function __git_dirty {
     echo "${dirty}"
 }
 
+function __git_dotfiles_dirty {
+    local markerfile="$HOME/.git_dotfiles.touch"
+    [ -e $markerfile ] || return
+    content=$(cat $markerfile)
+    [ ${content:-""} == 'behind' ] && echo "** "
+    return
+}
+
 if [[ ("$color_prompt" = yes) && (-n `type -t __git_ps1`) ]]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[38;5;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " [%s$(__git_dirty)]")\$ '
+    PS1='$(__git_dotfiles_dirty)${debian_chroot:+($debian_chroot)}\[\033[38;5;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " [%s$(__git_dirty)]")\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
