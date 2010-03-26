@@ -15,6 +15,7 @@ export MANPATH=/opt/local/man/:$MANPATH
 ## check for git dot files in the background
 if [ -f ~/.check_git_dotfiles.sh ]; then
     (~/.check_git_dotfiles.sh 2>&1 >/dev/null)&
+    disown %-
 fi
 
 export DISPLAY=:0.0
