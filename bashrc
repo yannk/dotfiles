@@ -11,7 +11,9 @@ export LANG=en_US.UTF-8
 export EDITOR=vim
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:~/.vim/bin/:$PATH
 export MANPATH=/opt/local/man/:$MANPATH
-export JAVA_HOME=$(/usr/libexec/java_home)
+if [ -x /usr/libexec/java_home ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
 
 ## check for git dot files in the background
 if [ -f ~/.check_git_dotfiles.sh ]; then
