@@ -101,7 +101,7 @@ autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `
 " (not everybody will like this. I'm lost without it)
 
 let mapleader = ","
-map r :redo<CR>
+" map r :redo<CR>
 
 " I don't use the command-line window
 nmap q: :q
