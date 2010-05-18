@@ -143,14 +143,5 @@ _ssh_auth_save() {
 }
 alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
 
-## gpg-agent
-if test -f $HOME/.gpg-agent-info &&    kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
-    GPG_AGENT_INFO=`cat $HOME/.gpg-agent-info`
-    export GPG_AGENT_INFO
-else
-    eval `gpg-agent --daemon`
-    echo $GPG_AGENT_INFO >$HOME/.gpg-agent-info
-fi
-
 ## local::lib
 eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib 2>/dev/null)
