@@ -2,7 +2,7 @@
 
 gitlink="$HOME/.profile"
 markerfile="$HOME/.git_dotfiles.touch"
-grace=$(( 6 * 60 * 60 ));
+grace=$(( 2 * 60 * 60 ));
 
 function checkgit {
     local gitfile=$(readlink $gitlink)
