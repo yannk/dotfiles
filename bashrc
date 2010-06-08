@@ -14,7 +14,7 @@ fi
 ## check for git dot files in the background
 if [ -f ~/.check_git_dotfiles.sh ]; then
     (~/.check_git_dotfiles.sh 2>&1 >/dev/null)&
-    disown %-
+    disown %- 2>/dev/null
 fi
 
 export DISPLAY=:0.0
