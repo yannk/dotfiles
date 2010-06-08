@@ -2,10 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-if [ -f ~/.bash_local ]; then
-    . ~/.bash_local
-fi
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=vim
@@ -145,3 +141,8 @@ alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
 
 ## local::lib
 eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib 2>/dev/null)
+
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
+fi
+
