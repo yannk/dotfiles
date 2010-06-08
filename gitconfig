@@ -28,3 +28,5 @@
 
 [i18n]
     commitencoding = utf-8
+[merge]
+	tool = vimdiff
