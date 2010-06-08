@@ -2,7 +2,7 @@
 
 gitlink="$HOME/.profile"
 markerfile="$HOME/.git_dotfiles.touch"
-grace=30;
+grace=$(( 6 * 60 * 60 ));
 
 function checkgit {
     local gitfile=$(readlink $gitlink)
@@ -36,11 +36,9 @@ if [ -e $markerfile ]; then
         fi
     fi
     now=`date +%s`
-    if [ $(( $now - $st_mtime > $grace)) ]; then
-        echo "checkgit"
+    if [ $(( $now - $st_mtime )) -gt $grace ]; then
         checkgit
     else
-        echo grace
         exit
     fi
 else
