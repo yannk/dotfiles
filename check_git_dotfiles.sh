@@ -35,7 +35,9 @@ if [ -e $markerfile ]; then
             exit -1;
         fi
     fi
+    now=`date +%s`
     if [ $(( $now - $st_mtime > $grace)) ]; then
+        echo "checkgit"
         checkgit
     else
         echo grace
