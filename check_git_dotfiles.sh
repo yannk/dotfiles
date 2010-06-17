@@ -15,9 +15,9 @@ function checkgit {
 
     pushd $repo >/dev/null
     ## <crap> * master 00ab877 [behind 25] commit message
-    git fetch
+    git fetch >/dev/null
     ## stating at 3.2, the regexp shouldn't be quoted
-    if [[ $(git branch -v) =~ "\[behind" ]]; then
+    if [[ $(git branch -v) =~ "[behind" ]]; then
         echo "behind" > $markerfile
     else
         echo "ok" > $markerfile
