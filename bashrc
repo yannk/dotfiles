@@ -11,6 +11,10 @@ if [ -x /usr/libexec/java_home ]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
+
 ## check for git dot files in the background
 if [ -f ~/.check_git_dotfiles.sh ]; then
     (~/.check_git_dotfiles.sh 2>&1 >/dev/null)&
