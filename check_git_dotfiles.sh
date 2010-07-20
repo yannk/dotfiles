@@ -5,13 +5,16 @@ markerfile="$HOME/.git_dotfiles.touch"
 grace=$(( 2 * 60 * 60 ));
 
 function checkgit {
+    if ! type git >/dev/null 2>&1; then
+        exit;
+    fi
     local gitfile=$(readlink $gitlink)
     local repo=$(dirname $gitfile)
 
     if [ -z $repo ]; then
         echo "cannot determine repo home"
         exit;
-    fi;
+    fi
 
     pushd $repo >/dev/null
     ## <crap> * master 00ab877 [behind 25] commit message
