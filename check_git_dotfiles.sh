@@ -4,7 +4,7 @@ gitlink="$HOME/.profile"
 markerfile="$HOME/.git_dotfiles.touch"
 grace=$(( 2 * 60 * 60 ));
 
-function checkgit {
+checkgit() {
     if ! type git >/dev/null 2>&1; then
         exit;
     fi
