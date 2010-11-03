@@ -1,4 +1,5 @@
 DOTFILES := $(shell pwd)
+GIT := $(shell type -P git)
 
 all: prep git submodules _vim _screen _shell
 
@@ -6,7 +7,7 @@ prep:
 	-@mkdir ~/tmp
 
 submodules:
-	if [ -x git ]; then \
+	if [ -x $(GIT) ]; then \
 		git submodule sync; \
 		git submodule init; \
 		git submodule update; \
