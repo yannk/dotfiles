@@ -19,7 +19,6 @@ fi
 
 ## linux. this used to work without specifying git. weird
 if [ -f /etc/bash_completion.d/git ]; then
-    echo "hello"
     . /etc/bash_completion
     . /etc/bash_completion.d/git
 fi
