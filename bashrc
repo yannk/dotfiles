@@ -100,7 +100,7 @@ function __git_dotfiles_dirty {
     return
 }
 
-if [[ ("$color_prompt" = yes) && (-n `type -t __git_ps1`) ]]; then
+if [[ ("$color_prompt" = yes) && (-n `type -t __git_ps1 >/dev/null 2&>1`) ]]; then
     PS1='$(__git_dotfiles_dirty)${debian_chroot:+($debian_chroot)}\[\033[38;5;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " [%s$(__git_dirty)]")\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
