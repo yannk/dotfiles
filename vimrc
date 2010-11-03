@@ -1,3 +1,6 @@
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 "  TIP/REMINDER :
 "  copier sur la ligne de commande le mot courant ou le buffer
 "  <C-r><C-w> ou <C-r>y (buffer)
