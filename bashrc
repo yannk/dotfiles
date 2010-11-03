@@ -17,6 +17,13 @@ if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion.d/git
 fi
 
+## linux. this used to work without specifying git. weird
+if [ -f /etc/bash_completion.d/git ]; then
+    echo "hello"
+    . /etc/bash_completion
+    . /etc/bash_completion.d/git
+fi
+
 ## check for git dot files in the background
 if [ -f ~/.check_git_dotfiles.sh ]; then
     (~/.check_git_dotfiles.sh 2>&1 >/dev/null)&
