@@ -67,6 +67,31 @@ set wildmode=list:longest,full
 set showmode
 set showcmd
 
+set laststatus=2
+"" http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
+set statusline=%t       "tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+
+"" fugitive
+set statusline+=\ %{fugitive#statusline()}
+
+" http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
+" now set it up to change the status line based on mode
+if version >= 700
+  au InsertEnter * hi StatusLine term=reverse ctermbg=Black ctermbg=55 gui=undercurl guisp=Magenta
+  au InsertLeave * hi StatusLine term=reverse ctermfg=White ctermbg=23 gui=bold,reverse
+                   hi StatusLine term=reverse ctermfg=White ctermbg=23 gui=bold,reverse
+endif
+
 " don't have files trying to override this .vimrc:
 set nomodeline
 
