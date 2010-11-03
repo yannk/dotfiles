@@ -7,6 +7,7 @@ prep:
 
 submodules:
 	if [ -x git ]; then \
+		git submodule sync; \
 		git submodule init; \
 		git submodule update; \
 	fi
