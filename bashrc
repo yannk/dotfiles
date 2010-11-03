@@ -11,8 +11,10 @@ if [ -x /usr/libexec/java_home ]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
+## this is specific to macosx + macports
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
+    . /opt/local/etc/bash_completion.d/git
 fi
 
 ## check for git dot files in the background
@@ -100,7 +102,7 @@ function __git_dotfiles_dirty {
     return
 }
 
-if [[ ("$color_prompt" = yes) && (-n `type -t __git_ps1 >/dev/null 2&>1`) ]]; then
+if [[ ("$color_prompt" = yes) && (-n `type -t __git_ps1 2>/dev/null`) ]]; then
     PS1='$(__git_dotfiles_dirty)${debian_chroot:+($debian_chroot)}\[\033[38;5;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " [%s$(__git_dirty)]")\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
