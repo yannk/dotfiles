@@ -1,7 +1,7 @@
 DOTFILES := $(shell pwd)
 GIT := $(shell type -P git)
 
-all: prep git submodules _vim _screen _shell
+all: prep git submodules _vim _screen _shell _misc
 
 prep:
 	-@mkdir ~/tmp
@@ -36,3 +36,6 @@ _shell:
 	ln -sf  $(DOTFILES)/bash_profile    ${HOME}/.bash_profile
 	ln -sf  $(DOTFILES)/profile         ${HOME}/.profile
 	ln -sf  $(DOTFILES)/check_git_dotfiles.sh ${HOME}/.check_git_dotfiles.sh
+
+_misc:
+	ln -sf  $(DOTFILES)/ackrc ${HOME}/.ackrc
