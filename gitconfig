@@ -19,6 +19,7 @@
     ci = commit
     co = checkout
     di = diff
+    pr = pull --rebase
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     hist = log --all --graph --pretty
     # http://gitster.livejournal.com/45019.html
