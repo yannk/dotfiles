@@ -1,6 +1,10 @@
 if v:version >= 700
-    call pathogen#runtime_append_all_bundles()
-    call pathogen#helptags()
+    try
+        call pathogen#runtime_append_all_bundles()
+        call pathogen#helptags()
+    catch /^Vim\%((\a\+)\)\=:E107/
+        " ignore
+    endtry
     filetype on " fix vim bad exist status
     filetype off " force a reload of filetypes on debian
 endif
