@@ -1,4 +1,4 @@
-if version >= 700
+if v:version >= 700
     call pathogen#runtime_append_all_bundles()
     call pathogen#helptags()
     filetype on " fix vim bad exist status
