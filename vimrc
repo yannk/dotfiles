@@ -1,7 +1,6 @@
 try
-    call pathogen#runtime_append_all_bundles()
-    call pathogen#helptags()
-catch /^Vim\%((\a\+)\)\=:E107/
+    runtime vim7-pathogen.vim
+catch /^Vim(\a\+):E107/
     " ignore
 endtry
 filetype on " fix vim bad exist status
