@@ -1,7 +1,8 @@
 if version >= 700
     call pathogen#runtime_append_all_bundles()
     call pathogen#helptags()
-    filetype off
+    filetype on " fix vim bad exist status
+    filetype off " force a reload of filetypes on debian
 endif
 
 "  TIP/REMINDER :
