@@ -1,5 +1,8 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+if version >= 700
+    call pathogen#runtime_append_all_bundles()
+    call pathogen#helptags()
+    filetype off
+endif
 
 "  TIP/REMINDER :
 "  copier sur la ligne de commande le mot courant ou le buffer
