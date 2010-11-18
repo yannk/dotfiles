@@ -1,13 +1,11 @@
-if v:version >= 700
-    try
-        call pathogen#runtime_append_all_bundles()
-        call pathogen#helptags()
-    catch /^Vim\%((\a\+)\)\=:E107/
-        " ignore
-    endtry
-    filetype on " fix vim bad exist status
-    filetype off " force a reload of filetypes on debian
-endif
+try
+    call pathogen#runtime_append_all_bundles()
+    call pathogen#helptags()
+catch /^Vim\%((\a\+)\)\=:E107/
+    " ignore
+endtry
+filetype on " fix vim bad exist status
+filetype off " force a reload of filetypes on debian
 
 "  TIP/REMINDER :
 "  copier sur la ligne de commande le mot courant ou le buffer
@@ -90,7 +88,9 @@ set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 
 "" fugitive
-set statusline+=\ %{fugitive#statusline()}
+if version > 700
+    set statusline+=\ %{fugitive#statusline()}
+endif
 
 " http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
 " now set it up to change the status line based on mode
