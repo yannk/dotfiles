@@ -16,6 +16,7 @@
 
 [alias]
     st = status
+    stn = status -uno
     ci = commit
     co = checkout
     di = diff
