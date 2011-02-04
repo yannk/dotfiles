@@ -35,3 +35,5 @@
     commitencoding = utf-8
 [merge]
 	tool = vimdiff
+[rerere]
+	enabled = 1
