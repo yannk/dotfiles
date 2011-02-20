@@ -134,6 +134,9 @@ esac
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 alias ci=vim
+alias gti=git
+alias igt=git
+alias gi=git
 alias vi=vim
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
