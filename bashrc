@@ -12,10 +12,14 @@ if [ -x /usr/libexec/java_home ]; then
 fi
 
 ## this is specific to macosx + macports
-if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
-    . /opt/local/etc/bash_completion.d/git
-fi
+for completion_file in \
+    /opt/local/etc/bash_completion \
+    /opt/local/etc/bash_completion.d/git \
+    /usr/local/git/contrib/completion/git-completion.bash; do
+    if [ -f $completion_file ]; then
+        source $completion_file
+    fi
+done
 
 ## linux. this used to work without specifying git. weird
 if [ -f /etc/bash_completion.d/git ]; then
