@@ -2,7 +2,7 @@
 
 gitlink="$HOME/.profile"
 markerfile="$HOME/.git_dotfiles.touch"
-grace=$(( 2 * 60 * 60 ));
+grace=$(( 24 * 60 * 60 ));
 
 checkgit() {
     if ! type git >/dev/null 2>&1; then
