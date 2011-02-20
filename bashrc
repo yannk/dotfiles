@@ -143,6 +143,15 @@ if [ -f ~/.bash_aliases ]; then
 fi
 alias gpg=gpg2
 
+# Mac OS version of colors, I can't read when sunshine in my place
+# this makes it all better
+#http://www.geekology.co.za/blog/2009/04/enabling-bash-terminal-directory-file-color-highlighting-mac-os-x/
+export LSCOLORS=ExFxCxDxCxegedabagacad
+function toomuchsun {
+    export LSCOLORS=DxFxCxDxCxegedabagacad
+}
+
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors -o -x /opt/local/bin/dircolors ]; then
     eval "`dircolors -b`"
