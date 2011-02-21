@@ -136,6 +136,7 @@ esac
 alias ci=vim
 alias gti=git
 alias igt=git
+alias gt=git
 alias gi=git
 alias vi=vim
 if [ -f ~/.bash_aliases ]; then
