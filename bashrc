@@ -165,8 +165,10 @@ fi
 ## re-link SSH_AUTH_SOCK before executing screen again
 _ssh_auth_save() {
     ln -sf "$SSH_AUTH_SOCK" "$HOME/.screen/ssh-auth-sock.$HOSTNAME"
+    ln -sf "$SSH_AUTH_SOCK" "$HOME/.tmux/ssh-auth-sock.$HOSTNAME"
 }
 alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
+alias tmux='_ssh_auth_save ; export HOSTNAME=$(hostname) ; tmux'
 
 ## local::lib
 eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib 2>/dev/null)
