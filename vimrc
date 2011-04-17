@@ -155,9 +155,12 @@ nmap :X :x
 " Convert file format to unix
 nmap _ux :se ff=unix<CR>
 
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+\%#\@<!$/
-nnoremap <silent> ,ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:nohl<CR>
+"highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+"match ExtraWhitespace /\s\+\%#\@<!$/
+"nnoremap <silent> ,ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:nohl<CR>fdfsdfsdfsdfsdfsf 
+
+set listchars=tab:»·,trail:·,precedes:⇠,extends:➠
+set list
 
 " == OLD STUFF I don't use anymore
 " Remove search pattern highlighting (because we have set hls previously)
