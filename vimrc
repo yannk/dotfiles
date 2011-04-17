@@ -18,10 +18,6 @@ se nocompatible
 filetype on
 filetype plugin on
 filetype indent on
-
-colorscheme railscasts
-" colorscheme inkpot
-
 se incsearch
 
 " have syntax highlighting in terminals which can display colours:
@@ -37,6 +33,16 @@ if has('syntax') && (&t_Co > 2)
     set t_Co=256
   endif
 endif
+
+
+" railscasts is usually my default
+"colorscheme railscasts
+" colorscheme inkpot
+" giving a shot to solarized
+    let g:solarized_termcolors=256
+    set background=dark
+    colorscheme solarized
+
 
 " this is sometimes necessary, but thanks it's not for me anymore
 " fix backspace
