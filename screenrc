@@ -27,6 +27,6 @@ defutf8 on
 
 # attrcolor b ".I"
 defbce "on"
-bce "on"
+# bce "on"
 
 source $HOME/.screenrc-local
