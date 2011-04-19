@@ -26,6 +26,7 @@ encoding UTF-8
 defutf8 on
 
 # attrcolor b ".I"
-# defbce "on"
+defbce "on"
+bce "on"
 
 source $HOME/.screenrc-local
