@@ -157,7 +157,7 @@ nmap _ux :se ff=unix<CR>
 
 "highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 "match ExtraWhitespace /\s\+\%#\@<!$/
-"nnoremap <silent> ,ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:nohl<CR>fdfsdfsdfsdfsdfsf 
+nnoremap <silent> ,ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 set listchars=tab:»·,trail:¬,precedes:⇠,extends:➠
 set list
