@@ -159,7 +159,7 @@ nmap _ux :se ff=unix<CR>
 "match ExtraWhitespace /\s\+\%#\@<!$/
 nnoremap <silent> ,ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-set listchars=tab:»·,trail:¬,precedes:⇠,extends:➠
+set listchars=tab:\ \ ,trail:¬,precedes:⇠,extends:➠
 set list
 
 " == OLD STUFF I don't use anymore

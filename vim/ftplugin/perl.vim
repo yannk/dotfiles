@@ -1,6 +1,7 @@
 " Only do this when not done yet for this buffer
 if exists("b:loaded_perl_vim") | finish | endif
 let b:loaded_perl_vim = 1
+set listchars=tab:»·,trail:¬,precedes:⇠,extends:➠
 
 set smartindent
 let perl_include_pod = 1
