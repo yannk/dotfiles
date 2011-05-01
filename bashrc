@@ -170,6 +170,11 @@ _ssh_auth_save() {
 alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
 alias tmux='_ssh_auth_save ; export HOSTNAME=$(hostname) ; tmux'
 
+PERLBREW_RC=$HOME/perl5/perlbrew/etc/bashrc
+if [ -f $PERLBREW_RC ]; then
+    source $PERLBREW_RC;
+fi
+
 ## local::lib
 eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib 2>/dev/null)
 
