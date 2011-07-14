@@ -130,8 +130,6 @@ if has('unix')
     set dir=~/tmp,.,/tmp,/var/tmp  " Swap file
 endif
 
-let Vimplate="$HOME/.vim/vimplate/vimplate"
-
 " When editing a file, always jump to the last cursor position.
 " This must be after the uncompress commands.
 autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
