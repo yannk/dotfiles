@@ -15,6 +15,7 @@ submodules:
 
 git:
 	ln -sf $(DOTFILES)/gitconfig 		${HOME}/.gitconfig
+	ln -sf $(DOTFILES)/.gitignore 		${HOME}/.gitignore
 
 _vim:
 	ln -sf  $(DOTFILES)/vimrc           ${HOME}/.vimrc
