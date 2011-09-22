@@ -15,7 +15,7 @@
     whitespace = red reverse
 
 [alias]
-    st = status
+    st = status -sb
     stn = status -uno
     ci = commit
     co = checkout
@@ -39,3 +39,5 @@
     conflictstyle = diff3
 [rerere]
     enabled = 1
+[push]
+	default = tracking
