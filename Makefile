@@ -41,3 +41,4 @@ _shell:
 
 _misc:
 	ln -sf  $(DOTFILES)/ackrc ${HOME}/.ackrc
+	#update-alternatives --install /usr/bin/ack ack /usr/bin/ack-grep 100
