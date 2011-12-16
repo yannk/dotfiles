@@ -14,6 +14,8 @@ fi
 
 ## this is specific to macosx + macports
 for completion_file in \
+    /etc/bash_completion \
+    /etc/bash_completion.d/git \
     /opt/local/etc/bash_completion \
     /opt/local/etc/bash_completion.d/git \
     /usr/local/git/contrib/completion/git-completion.bash; do
@@ -21,12 +23,6 @@ for completion_file in \
         source $completion_file
     fi
 done
-
-## linux. this used to work without specifying git. weird
-if [ -f /etc/bash_completion.d/git ]; then
-    . /etc/bash_completion
-    . /etc/bash_completion.d/git
-fi
 
 ## check for git dot files in the background
 if [ -f ~/.check_git_dotfiles.sh ]; then
