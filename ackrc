@@ -1,3 +1,5 @@
 --pager=less -R
 --type-add
 tt=.tmpl
+--type-add
+php=.inc
