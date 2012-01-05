@@ -192,3 +192,10 @@ autocmd FileType html set formatoptions+=tl
 " files a few bytes smaller:
 autocmd FileType html,css set expandtab softtabstop=4
 autocmd FileType php set expandtab tabstop=2 shiftwidth=2 autoindent smartindent
+" Drupal stuff
+if has("autocmd")
+  augroup module
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.inc set filetype=php
+  augroup END
+endif
