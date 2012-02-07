@@ -136,15 +136,9 @@ autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `
 
 
 " == MAPPINGS
-"
-" redo
-" (not everybody will like this. I'm lost without it)
-
 let mapleader = ","
-" map r :redo<CR>
 
 " I don't use the command-line window
-nmap q: :q
 nmap :Q :q
 
 " I don't want to encrypt, I want to :wq
@@ -169,9 +163,6 @@ nnoremap \tp :set invpaste paste?<CR>
 nmap <F5> \tp
 imap <F5> <C-O>\tp
 set pastetoggle=<F5>
-"
-" Opens a buffer with the diff for the current file
-nmap _di :new\|r!svk di #<CR>ggdd:se nomod ft=diff<CR>
 
 " in human-language files, automatically format everything at 72 chars:
 "" autocmd FileType human set formatoptions+=t textwidth=72
