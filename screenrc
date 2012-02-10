@@ -1,7 +1,8 @@
 # Window tabs, second to last line
 #
-unsetenv SSH_AUTH_SOCK
-setenv SSH_AUTH_SOCK $HOME/.screen/ssh-auth-sock.$HOSTNAME
+#unsetenv SSH_AUTH_SOCK
+#setenv SSH_AUTH_SOCK $HOME/.screen/ssh-auth-sock.$HOSTNAME
+#setenv SSH_AUTH_SOCK $MUX_SSH_AUTH_SOCK
 
 vbell on
 vbell_msg "beeeep"

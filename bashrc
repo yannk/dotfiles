@@ -159,13 +159,30 @@ if [ -x /usr/bin/dircolors -o -x /opt/local/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-## re-link SSH_AUTH_SOCK before executing screen again
+## re-link SSH_AUTH_SOCK before executing screen/tmux again
 _ssh_auth_save() {
-    ln -sf "$SSH_AUTH_SOCK" "$HOME/.screen/ssh-auth-sock.$HOSTNAME"
-    ln -sf "$SSH_AUTH_SOCK" "$HOME/.tmux/ssh-auth-sock.$HOSTNAME"
+    local SSHID=$1
+    export MUX_SSH_AUTH_SOCK=$HOME/.ssh/ssh-auth-sock.mux.$SSHID
+    ln -sf "$SSH_AUTH_SOCK" $MUX_SSH_AUTH_SOCK
 }
-alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
-alias tmux='_ssh_auth_save ; export HOSTNAME=$(hostname) ; tmux'
+
+_relocate_ssh_auth_sock() {
+    local SSHID=$1
+    local BASE=$HOME/.ssh
+    local SOCK=$BASE/ssh-auth-sock.$SSHID
+    if [ -n $SOCK ] && [ $SOCK != $SSH_AUTH_SOCK ]; then
+        if [ ! -d $BASE ]; then
+            mkdir -p $BASE && chmod 0700 $BASE
+        fi
+        rm -f $SOCK
+        ln -sf "$SSH_AUTH_SOCK" $SOCK
+        export SSH_AUTH_SOCK=$SOCK
+    fi
+}
+## commented to instead put SSH_AUTH_SOCK in a predictable place
+#alias screen='_ssh_auth_save $(hostname); screen'
+#alias tmux='_ssh_auth_save $(hostname); tmux'
+_relocate_ssh_auth_sock $(hostname)
 
 PERLBREW_RC=$HOME/perl5/perlbrew/etc/bashrc
 if [ -f $PERLBREW_RC ]; then
