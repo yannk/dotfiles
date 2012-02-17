@@ -170,12 +170,15 @@ _relocate_ssh_auth_sock() {
     local SSHID=$1
     local BASE=$HOME/.ssh
     local SOCK=$BASE/ssh-auth-sock.$SSHID
-    if [ -n $SOCK ] && [ $SOCK != $SSH_AUTH_SOCK ]; then
+    if [ -z $SSH_AUTH_SOCK ]; then
+        return
+    fi
+    if [ -n $SOCK ] && [ "$SOCK" != "$SSH_AUTH_SOCK" ]; then
         if [ ! -d $BASE ]; then
             mkdir -p $BASE && chmod 0700 $BASE
         fi
         rm -f $SOCK
-        ln -sf "$SSH_AUTH_SOCK" $SOCK
+        ln -sf "$SSH_AUTH_SOCK" "$SOCK"
         export SSH_AUTH_SOCK=$SOCK
     fi
 }
