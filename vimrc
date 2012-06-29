@@ -187,3 +187,6 @@ autocmd FileType html,css set expandtab softtabstop=4
 autocmd BufRead,BufNewFile *.module set filetype=php
 autocmd BufRead,BufNewFile *.inc set filetype=php
 autocmd FileType php set softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoindent smartindent
+
+" Disable since I don't have --with-features=big
+" let g:Powerline_symbols = 'fancy'
