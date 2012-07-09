@@ -151,6 +151,10 @@ nmap _ux :se ff=unix<CR>
 "match ExtraWhitespace /\s\+\%#\@<!$/
 nnoremap <silent> ,ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:nohl<CR>
 
+" automatically insert \v when searching for normal regexp. :help \v
+nnoremap / /\v
+vnoremap / /\v
+
 set listchars=tab:\ \ ,trail:¬,precedes:⇠,extends:➠
 set list
 
