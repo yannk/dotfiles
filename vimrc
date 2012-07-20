@@ -149,7 +149,7 @@ nmap _ux :se ff=unix<CR>
 
 "highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 "match ExtraWhitespace /\s\+\%#\@<!$/
-nnoremap <silent> ,ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <leader>ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " automatically insert \v when searching for normal regexp. :help \v
 nnoremap / /\v
@@ -157,10 +157,7 @@ vnoremap / /\v
 
 set listchars=tab:\ \ ,trail:¬,precedes:⇠,extends:➠
 set list
-
-" == OLD STUFF I don't use anymore
-" Remove search pattern highlighting (because we have set hls previously)
-nmap <F4> :noh<CR>
+set scrolloff=3
 
 " http://www.stripey.com/vim/vimrc.html
 nnoremap \tp :set invpaste paste?<CR>
