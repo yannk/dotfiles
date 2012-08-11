@@ -155,6 +155,12 @@ nnoremap <silent> <leader>ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:noh
 nnoremap / /\v
 vnoremap / /\v
 
+" Let's try this. But on my kinesis those keys are "fine"
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
 set listchars=tab:\ \ ,trail:¬,precedes:⇠,extends:➠
 set list
 set scrolloff=3
