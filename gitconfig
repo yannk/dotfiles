@@ -41,3 +41,6 @@
     enabled = 1
 [push]
 	default = tracking
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
