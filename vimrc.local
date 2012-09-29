@@ -1,0 +1,115 @@
+" have syntax highlighting in terminals which can display colours:
+if has('syntax') && (&t_Co > 2)
+  syntax on
+  se hlsearch
+  if (&t_Co <= 8)
+    " I *HATE* the default darkblue (unreadable on dark backgrounds)
+    hi Comment ctermfg=DarkGreen
+  endif
+  " hack that seem to be necessary under screen *sometimes*
+  if (&t_Co < 256 && $TERM =~ '256')
+    set t_Co=256
+  endif
+endif
+
+" colors
+set background=dark
+colorscheme solarized
+
+" use "[RO]" for "[readonly]" to save space in the message line:
+"set shortmess+=r
+
+set nojs " Join lines with only one space
+
+"" http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
+"set statusline=%t       "tail of the filename
+"set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+"set statusline+=%{&ff}] "file format
+"set statusline+=%h      "help file flag
+"set statusline+=%m      "modified flag
+"set statusline+=%r      "read only flag
+"set statusline+=%y      "filetype
+"set statusline+=%=      "left/right separator
+"set statusline+=%c,     "cursor column
+"set statusline+=%l/%L   "cursor line/total lines
+"set statusline+=\ %P    "percent through file
+
+set nowrap
+set noignorecase
+set shiftround
+set ttyfast
+if version >= 700
+    set cursorline " testing to see if I like it
+endif
+
+" visual bell
+set vb t_vb=
+
+" When editing a file, always jump to the last cursor position.
+" This must be after the uncompress commands.
+autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
+
+" I don't use the command-line window
+"nmap :Q :q
+
+" I don't want to encrypt, I want to :wq
+"nmap :X :x
+"
+if has("user_commands")
+    " Why would I want to encrypt.
+    command! -bang X x<bang>
+endif
+
+" Convert file format to unix
+nmap _ux :se ff=unix<CR>
+
+"highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+"match ExtraWhitespace /\s\+\%#\@<!$/
+nnoremap <silent> <leader>ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" automatically insert \v when searching for normal regexp. :help \v
+nnoremap / /\v
+vnoremap / /\v
+
+" Let's try this. But on my kinesis those keys are "fine"
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+set listchars=tab:\ \ ,trail:¬,precedes:⇠,extends:➠
+
+" http://www.stripey.com/vim/vimrc.html
+nnoremap \tp :set invpaste paste?<CR>
+nmap <F5> \tp
+imap <F5> <C-O>\tp
+set pastetoggle=<F5>
+
+" in human-language files, automatically format everything at 72 chars:
+autocmd FileType human set formatoptions+=t textwidth=72
+
+" for actual C (not C++) programming where comments have explicit end
+" characters, if starting a new line in the middle of a comment automatically
+" insert the comment leader characters:
+autocmd FileType c set formatoptions+=ro
+
+" for CSS, also have things in braces indented:
+"autocmd FileType css set smartindent
+
+" for HTML, generally format text, but if a long line has been created leave it
+" alone when editing:
+"autocmd FileType html set formatoptions+=tl
+
+" for both CSS and HTML, use genuine tab characters for indentation, to make
+" files a few bytes smaller:
+"autocmd FileType html,css set expandtab softtabstop=4
+
+" Drupal stuff
+autocmd BufRead,BufNewFile *.module set filetype=php
+autocmd BufRead,BufNewFile *.inc set filetype=php
+autocmd FileType php set softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoindent smartindent
+
+" Disable since I don't have --with-features=big
+" let g:Powerline_symbols = 'fancy'
+"
+let g:snips_author = 'Yann Kerherve <yann.kerherve@gmail.com>'

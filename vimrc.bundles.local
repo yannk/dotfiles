@@ -1,0 +1,7 @@
+" To override all the included bundles, set
+" g:override_spf13_bundles = 1
+if !exists('g:spf13_bundle_groups')
+    let g:spf13_bundle_groups=['general', 'programming', 'python', 'javascript', 'html', 'misc']
+endif
+
+"Bundle 'perl'

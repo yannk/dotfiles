@@ -2,3 +2,4 @@
 /vim/doc/tags
 *.pyc
 /env/
+/spf13-vim

@@ -1,7 +1,7 @@
 DOTFILES := $(shell pwd)
 GIT := $(shell type -P git)
 
-all: prep git submodules _vim _screen _shell _misc
+all: prep git submodules _screen _shell _misc spf13-vim _vim
 
 prep:
 	-@mkdir ~/tmp
@@ -18,11 +18,8 @@ git:
 	ln -sf $(DOTFILES)/.gitignore 		${HOME}/.gitignore
 
 _vim:
-	ln -sf  $(DOTFILES)/vimrc           ${HOME}/.vimrc
-	@if [ -d ${HOME}/.vim -a ! -L ${HOME}/.vim ]; then \
-	    mv -u ${HOME}/.vim ${HOME}/.vim-backup-`date +%Y%m%d%H%M`; \
-	fi
-	ln -snf $(DOTFILES)/vim             ${HOME}/.vim
+	ln -sf  $(DOTFILES)/vimrc.local           ${HOME}/.vimrc.local
+	ln -sf  $(DOTFILES)/vimrc.bundles.local  ${HOME}/.vimrc.bundles.local
 
 _screen:
 	-mkdir ${HOME}/.screen
@@ -42,3 +39,10 @@ _shell:
 _misc:
 	ln -sf  $(DOTFILES)/ackrc ${HOME}/.ackrc
 	#update-alternatives --install /usr/bin/ack ack /usr/bin/ack-grep 100
+
+spf13-vim:
+	git clone --recursive http://github.com/spf13/spf13-vim.git
+	cd spf13-vim && bash bootstrap.sh
+
+update-spf13: spf13-vim
+	cd spf13-vim && git pull --rebase && vim +BundleInstall! +BundleClean +q
