@@ -16,9 +16,6 @@ endif
 set background=dark
 colorscheme solarized
 
-" use "[RO]" for "[readonly]" to save space in the message line:
-"set shortmess+=r
-
 set nojs " Join lines with only one space
 
 "" http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
@@ -49,16 +46,8 @@ set vb t_vb=
 " This must be after the uncompress commands.
 autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
 
-" I don't use the command-line window
-"nmap :Q :q
-
 " I don't want to encrypt, I want to :wq
-"nmap :X :x
-"
-if has("user_commands")
-    " Why would I want to encrypt.
-    command! -bang X x<bang>
-endif
+nmap :X :x
 
 " Convert file format to unix
 nmap _ux :se ff=unix<CR>
@@ -113,3 +102,7 @@ autocmd FileType php set softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoinde
 " let g:Powerline_symbols = 'fancy'
 "
 let g:snips_author = 'Yann Kerherve <yann.kerherve@gmail.com>'
+
+" Stupid NERDtree override C-e which I use quite a bit
+silent! unmap <C-e>
+silent! map <leader>E :NERDTreeToggle<CR>:NERDTreeMirror<CR>
