@@ -106,3 +106,7 @@ let g:snips_author = 'Yann Kerherve <yann.kerherve@gmail.com>'
 " Stupid NERDtree override C-e which I use quite a bit
 silent! unmap <C-e>
 silent! map <leader>E :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+
+" unnamedplus doesn't work without gui
+set clipboard=unnamed
+let g:Powerline_symbols = 'unicode'

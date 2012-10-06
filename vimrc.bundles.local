@@ -1,7 +1,25 @@
 " To override all the included bundles, set
 " g:override_spf13_bundles = 1
 if !exists('g:spf13_bundle_groups')
-    let g:spf13_bundle_groups=['general', 'programming', 'python', 'javascript', 'html', 'misc']
+    let g:spf13_bundle_groups=['programming', 'python', 'javascript', 'html', 'misc']
 endif
 
 Bundle 'c9s/perlomni.vim'
+
+"" coming from general w/o csa
+Bundle 'scrooloose/nerdtree'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'spf13/vim-colors'
+Bundle 'tpope/vim-surround'
+Bundle 'AutoClose'
+Bundle 'kien/ctrlp.vim'
+Bundle 'vim-scripts/sessionman.vim'
+Bundle 'matchit.zip'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'godlygeek/csapprox'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'corntrace/bufexplorer'
+Bundle 'mbbill/undotree'
+Bundle 'myusuf3/numbers.vim'
