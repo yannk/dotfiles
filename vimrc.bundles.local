@@ -4,7 +4,13 @@ if !exists('g:spf13_bundle_groups')
     let g:spf13_bundle_groups=['programming', 'python', 'javascript', 'html', 'misc']
 endif
 
+"" Perl Omnicompletion
 Bundle 'c9s/perlomni.vim'
+
+Bundle 'tpope/vim-repeat'
+
+"" Syntax checking on the fly for  python
+Bundle 'nvie/vim-flake8'
 
 "" coming from general w/o csa
 Bundle 'scrooloose/nerdtree'
