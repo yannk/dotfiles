@@ -102,8 +102,8 @@ autocmd FileType php set softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoinde
 let g:snips_author = 'Yann Kerherve <yann.kerherve@gmail.com>'
 
 " Stupid NERDtree override C-e which I use quite a bit
-"silent! unmap <C-e>
-silent! map <leader>E :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+silent! unmap <C-e>
+silent! map <leader>e :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 
  "I actually use this
 silent! unmap ;
