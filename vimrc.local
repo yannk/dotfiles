@@ -31,7 +31,7 @@ set nojs " Join lines with only one space
 "set statusline+=%l/%L   "cursor line/total lines
 "set statusline+=\ %P    "percent through file
 
-set nowrap
+set wrap
 set noignorecase
 set shiftround
 set ttyfast
@@ -98,15 +98,19 @@ autocmd BufRead,BufNewFile *.module set filetype=php
 autocmd BufRead,BufNewFile *.inc set filetype=php
 autocmd FileType php set softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoindent smartindent
 
-" Disable since I don't have --with-features=big
-" let g:Powerline_symbols = 'fancy'
-"
+" CHANGING SPF13 DEFAULTS I DON'T LIKE
 let g:snips_author = 'Yann Kerherve <yann.kerherve@gmail.com>'
 
 " Stupid NERDtree override C-e which I use quite a bit
 silent! unmap <C-e>
 silent! map <leader>E :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 
+ "I actually use this
+silent! unmap ;
+
 " unnamedplus doesn't work without gui
 set clipboard=unnamed
 let g:Powerline_symbols = 'unicode'
+
+"autocmd FileType vim
+"    \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("", '"')
