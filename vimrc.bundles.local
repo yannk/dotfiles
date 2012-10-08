@@ -17,7 +17,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'spf13/vim-colors'
 Bundle 'tpope/vim-surround'
-Bundle 'Townk/vim-autoclose'
+" Oh... this breaks severly. This was inserting punvisible junk when exiting
+" edit mode
+"Bundle 'Townk/vim-autoclose'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/sessionman.vim'
 Bundle 'matchit.zip'
