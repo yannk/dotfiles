@@ -1,7 +1,7 @@
 " To override all the included bundles, set
 " g:override_spf13_bundles = 1
 if !exists('g:spf13_bundle_groups')
-    let g:spf13_bundle_groups=['python', 'javascript', 'html', 'misc']
+    let g:spf13_bundle_groups=['neocomplcache', 'programming', 'ruby', 'python', 'javascript', 'html', 'misc', 'scala']
 endif
 
 "" Perl Omnicompletion
@@ -11,24 +11,6 @@ Bundle 'tpope/vim-repeat'
 
 "" Syntax checking on the fly for  python
 Bundle 'nvie/vim-flake8'
-
-" Fix snipmate. This is general programming
-Bundle 'scrooloose/syntastic'
-"Bundle 'garbas/vim-snipmate'
-"Bundle 'spf13/snipmate-snippets'
-" Source support_function.vim to support snipmate-snippets.
-"if filereadable(expand("~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim"))
-"    source ~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim
-"endif
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'godlygeek/tabular'
-if executable('ctags')
-    Bundle 'majutsushi/tagbar'
-endif
-Bundle 'Shougo/neocomplcache'
-"Bundle 'Shougo/neocomplcache-snippets-complete'
 
 "" coming from general w/o csa
 Bundle 'scrooloose/nerdtree'
