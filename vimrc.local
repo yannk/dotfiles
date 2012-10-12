@@ -113,4 +113,6 @@ set clipboard=unnamed
 let g:Powerline_symbols = 'unicode'
 
 " Don't try to autoclose " in vim, since it's used a lot for commenting
-autocmd FileType vim iunmap "
+" autocmd FileType vim iunmap "
+" disable AutoClose until it gets smarter
+let g:autoclose_on = 0
