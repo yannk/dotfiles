@@ -120,6 +120,7 @@ silent! unmap ;
 " unnamedplus doesn't work without gui. but it's too late to change it
 set clipboard=unnamed
 let g:Powerline_symbols = 'unicode'
+"let g:Powerline_symbols = 'fancy'
 
 " Don't try to autoclose " in vim, since it's used a lot for commenting
 " autocmd FileType vim iunmap "
