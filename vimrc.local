@@ -98,6 +98,15 @@ autocmd BufRead,BufNewFile *.module set filetype=php
 autocmd BufRead,BufNewFile *.inc set filetype=php
 autocmd FileType php set softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoindent smartindent
 
+" Seems to be the default for golang
+"autocmd FileType go set softtabstop=8 tabstop=8 shiftwidth=8
+
+" Remove <tab> highlighting in cases were tabs are normal
+" and expected. This is a problem with solarized cs only.
+autocmd FileType go hi! SpecialKey cterm=none
+autocmd FileType gitcommit hi! SpecialKey cterm=none
+autocmd FileType make hi! SpecialKey cterm=none
+
 " CHANGING SPF13 DEFAULTS I DON'T LIKE
 let g:snips_author = 'Yann Kerherve <yann.kerherve@gmail.com>'
 

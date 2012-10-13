@@ -13,6 +13,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'nvie/vim-flake8'
 
 Bundle 'jnwhiteh/vim-golang'
+"Bundle 'nsf/gocode'
 
 "" coming from general w/o csa
 Bundle 'scrooloose/nerdtree'
