@@ -12,6 +12,8 @@ Bundle 'tpope/vim-repeat'
 "" Syntax checking on the fly for  python
 Bundle 'nvie/vim-flake8'
 
+Bundle 'jnwhiteh/vim-golang'
+
 "" coming from general w/o csa
 Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
