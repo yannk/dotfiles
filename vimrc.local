@@ -96,10 +96,10 @@ autocmd FileType c set formatoptions+=ro
 " Drupal stuff
 autocmd BufRead,BufNewFile *.module set filetype=php
 autocmd BufRead,BufNewFile *.inc set filetype=php
-autocmd FileType php set softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoindent smartindent
+autocmd FileType php setlocal softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoindent smartindent
 
-" Seems to be the default for golang
-"autocmd FileType go set softtabstop=8 tabstop=8 shiftwidth=8
+
+autocmd FileType go setlocal softtabstop=0 tabstop=4 shiftwidth=4 noexpandtab
 
 " Remove <tab> highlighting in cases were tabs are normal
 " and expected. This is a problem with solarized cs only.
