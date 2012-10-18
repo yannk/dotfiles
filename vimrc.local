@@ -126,3 +126,5 @@ let g:Powerline_symbols = 'unicode'
 " autocmd FileType vim iunmap "
 " disable AutoClose until it gets smarter
 let g:autoclose_on = 0
+
+set viminfo='20,"1000
