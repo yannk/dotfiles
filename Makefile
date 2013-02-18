@@ -18,6 +18,8 @@ git:
 	ln -sf $(DOTFILES)/.gitignore 		${HOME}/.gitignore
 
 _vim:
+	-mkdir ${HOME}/.vim
+	-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	ln -sf  $(DOTFILES)/vimrc           ${HOME}/.vimrc
 
 _screen:
