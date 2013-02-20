@@ -7,6 +7,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
     " ^ otherwise BundleClean removes itself
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'jnwhiteh/vim-golang'
@@ -43,6 +44,8 @@ Bundle 'bronson/vim-trailing-whitespace'
     if version >= 700
         set cursorline " testing to see if I like it
     endif
+
+    let g:is_posix = 1  " vim's default is archaic bourne shell, bring it up to the 90s
 " "}}}
 
 
@@ -51,8 +54,6 @@ Bundle 'bronson/vim-trailing-whitespace'
     set fo-=r " Do not automatically insert a comment leader after an enter
     set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
 
-    set nowrap
-    set textwidth=0                 " Don't wrap lines by default
     set wildmenu                    " show list instead of just completing
     set wildmode=longest,list       " At command line, complete longest common string, then list alternatives.
     set scrolljump=5                " lines to scroll when cursor leaves screen
@@ -130,12 +131,12 @@ Bundle 'bronson/vim-trailing-whitespace'
 
     "Auto commands
     au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
-    au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
     au BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit
+    "au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
 
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute "normal g'\"" | endif " restore position in file
 
-    autocmd FileType {txt,rst} set formatoptions+=t textwidth=72
+    autocmd FileType {txt,rst,markdown} set formatoptions+=t textwidth=72
     autocmd FileType go setlocal softtabstop=0 tabstop=4 shiftwidth=4 noexpandtab
 
     " Remove <tab> highlighting in cases were tabs are normal
@@ -153,7 +154,7 @@ Bundle 'bronson/vim-trailing-whitespace'
 
 " Key mappings " {{{
     let mapleader = ','
-    let maplocalleader = ','
+    let maplocalleader = '	'
     nnoremap <silent> <LocalLeader>rs :source ~/.vimrc<CR>
     nnoremap <silent> <LocalLeader>rt :tabnew ~/.vim/vimrc<CR>
     nnoremap <silent> <LocalLeader>re :e ~/.vim/vimrc<CR>
