@@ -6,7 +6,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=vim
-export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin/:~/.vim/bin/:/usr/local/go/bin/:$PATH
+export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/man/:$MANPATH
 if [ -x /usr/libexec/java_home ]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
@@ -202,3 +202,9 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/dev/google-cloud-sdk-0.9.6/bin

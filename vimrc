@@ -12,6 +12,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'scrooloose/syntastic'
 "Bundle 'nsf/gocode', {'rtp': 'vim/'}
 
 " General "{{{

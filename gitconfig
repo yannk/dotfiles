@@ -1,6 +1,6 @@
 [user]
-    name = Yann Kerherve
-    email = yann.kerherve@gmail.com
+	name = Yann Kerherve
+	email = yann.kerherve@gmail.com
 
 [color]
     diff = auto
@@ -39,5 +39,5 @@
     conflictstyle = diff3
 [rerere]
     enabled = 1
-[push]
-	default = tracking
+[mergetool]
+	keepBackup = true
