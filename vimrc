@@ -194,6 +194,7 @@ Bundle 'scrooloose/syntastic'
 
     " I don't want to encrypt, I want to :wq
     nmap :X :x
+    nmap :W :w
     nmap :Q :q
 
     " Convert file format to unix

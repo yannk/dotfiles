@@ -6,11 +6,11 @@ export PIP_REQUIRE_VIRTUALENV=true
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=vim
-export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin::/usr/local/sbin:$PATH
 export MANPATH=/opt/local/man/:$MANPATH
-if [ -x /usr/libexec/java_home ]; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
-fi
+#if [ -x /usr/libexec/java_home ]; then
+#    export JAVA_HOME=$(/usr/libexec/java_home)
+#fi
 
 ## this is specific to macosx + macports
 for completion_file in \
@@ -18,6 +18,8 @@ for completion_file in \
     /etc/bash_completion.d/git \
     /opt/local/etc/bash_completion \
     /opt/local/etc/bash_completion.d/git \
+    /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh \
+    /usr/local/opt/git/etc/bash_completion.d/git-completion.bash \
     /usr/local/git/contrib/completion/git-completion.bash; do
     if [ -f $completion_file ]; then
         source $completion_file
@@ -62,11 +64,6 @@ stty -ixon
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|xterm-256color) color_prompt=yes;;
@@ -104,29 +101,12 @@ function __git_dirty {
     echo "${dirty}"
 }
 
-function __git_dotfiles_dirty {
-    local markerfile="$HOME/.git_dotfiles.touch"
-    [ -e $markerfile ] || return
-    content=$(cat $markerfile)
-    [ ${content:-""} == 'behind' ] && echo "** "
-    return
-}
-
 if [[ ("$color_prompt" = yes) && (-n `type -t __git_ps1 2>/dev/null`) ]]; then
-    PS1='$(__git_dotfiles_dirty)${debian_chroot:+($debian_chroot)}\[\033[38;5;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " [%s$(__git_dirty)]")\$ '
+    PS1='\[\033[38;5;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " [%s$(__git_dirty)]")\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -144,7 +124,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 alias gpg=gpg2
 
-# Mac OS version of colors, I can't read when sunshine in my place
+# Mac OS version of colors, I can't read when sun shines in my place
 # this makes it all better
 #http://www.geekology.co.za/blog/2009/04/enabling-bash-terminal-directory-file-color-highlighting-mac-os-x/
 export LSCOLORS=ExFxCxDxCxegedabagacad
@@ -195,15 +175,12 @@ if [ -f $PERLBREW_RC ]; then
     source $PERLBREW_RC;
 fi
 
-## local::lib
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib 2>/dev/null)
-
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
