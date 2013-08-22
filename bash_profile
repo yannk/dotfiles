@@ -6,4 +6,4 @@ if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 
-[[ -s $USER/.nvm/nvm.sh ]] && . $USER/.nvm/nvm.sh # This loads NVM
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
