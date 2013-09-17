@@ -1,6 +1,11 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+PERLBREW_RC=$HOME/perl5/perlbrew/etc/bashrc
+if [ -f $PERLBREW_RC ]; then
+    source $PERLBREW_RC;
+fi
+
 
 export PIP_REQUIRE_VIRTUALENV=true
 export LC_ALL=en_US.UTF-8
@@ -51,7 +56,7 @@ export HISTFILESIZE=100000
 shopt -s histappend
 
 # Save and reload the history after each command finishes
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+#export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -168,11 +173,6 @@ _relocate_ssh_auth_sock() {
 #alias screen='_ssh_auth_save $(hostname); screen'
 #alias tmux='_ssh_auth_save $(hostname); tmux'
 _relocate_ssh_auth_sock $(hostname)
-
-PERLBREW_RC=$HOME/perl5/perlbrew/etc/bashrc
-if [ -f $PERLBREW_RC ]; then
-    source $PERLBREW_RC;
-fi
 
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local

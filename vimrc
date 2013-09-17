@@ -147,6 +147,7 @@ Bundle 'scrooloose/syntastic'
     "autocmd FileType make hi! SpecialKey cterm=none
 
     " Drupal stuff
+    autocmd FileType gitcommit setlocal fo+=t " automatic word wrapping as I type
     autocmd BufRead,BufNewFile *.module set filetype=php
     autocmd BufRead,BufNewFile *.inc set filetype=php
     autocmd FileType php setlocal softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoindent smartindent
