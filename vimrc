@@ -13,6 +13,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'scrooloose/syntastic'
+Bundle 'dgryski/vim-godef'
 "Bundle 'nsf/gocode', {'rtp': 'vim/'}
 
 " General "{{{
