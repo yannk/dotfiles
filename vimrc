@@ -14,6 +14,7 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'scrooloose/syntastic'
 Bundle 'dgryski/vim-godef'
+Bundle "pangloss/vim-javascript"
 "Bundle 'nsf/gocode', {'rtp': 'vim/'}
 
 " General "{{{
@@ -53,8 +54,10 @@ Bundle 'dgryski/vim-godef'
 
 " Formatting "{{{
     set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
+    set fo+=c " Auto-wrap comments using textwidth
     set fo-=r " Do not automatically insert a comment leader after an enter
     set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
+    set fo+=j " Where it makes sense, remove a comment leader when joining lines
 
     set wildmenu                    " show list instead of just completing
     set wildmode=longest,list       " At command line, complete longest common string, then list alternatives.
@@ -147,8 +150,9 @@ Bundle 'dgryski/vim-godef'
     "autocmd FileType gitcommit hi! SpecialKey cterm=none
     "autocmd FileType make hi! SpecialKey cterm=none
 
-    " Drupal stuff
     autocmd FileType gitcommit setlocal fo+=t " automatic word wrapping as I type
+
+    " Drupal stuff
     autocmd BufRead,BufNewFile *.module set filetype=php
     autocmd BufRead,BufNewFile *.inc set filetype=php
     autocmd FileType php setlocal softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoindent smartindent
