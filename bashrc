@@ -7,6 +7,7 @@ if [ -f $PERLBREW_RC ]; then
 fi
 
 
+export GPG_TTY=`tty`
 export PIP_REQUIRE_VIRTUALENV=true
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -183,4 +184,9 @@ fi
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$HOME/dev/google-cloud-sdk-0.9.6/bin
+#export PATH=$PATH:$HOME/dev/google-cloud-sdk-0.9.9/bin
+export PATH=$PATH:$HOME/dev/google-cloud-sdk/bin
+# The next line enables bash completion for gcloud.
+source /Users/yann/dev/google-cloud-sdk/arg_rc
+
+source ~/dotfiles/bin/z.sh

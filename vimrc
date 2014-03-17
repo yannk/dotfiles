@@ -14,8 +14,9 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'scrooloose/syntastic'
 Bundle 'dgryski/vim-godef'
-Bundle "pangloss/vim-javascript"
-"Bundle 'nsf/gocode', {'rtp': 'vim/'}
+Bundle 'pangloss/vim-javascript'
+" Bundle 'Python-mode-klen'
+" Bundle 'nsf/gocode', {'rtp': 'vim/'}
 
 " General "{{{
     set encoding=utf-8
@@ -264,4 +265,5 @@ function! InitializeDirectories()
         endif
     endfor
 endfunction
+set backup
 call InitializeDirectories()
