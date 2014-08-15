@@ -7,6 +7,9 @@ if [ -f $PERLBREW_RC ]; then
 fi
 
 
+# damn .pyc, go away
+export PYTHONDONTWRITEBYTECODE=1
+
 export GPG_TTY=`tty`
 export PIP_REQUIRE_VIRTUALENV=true
 export LC_ALL=en_US.UTF-8

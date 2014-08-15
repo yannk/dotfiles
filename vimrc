@@ -4,19 +4,20 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Bundles
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
     " ^ otherwise BundleClean removes itself
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'scrooloose/syntastic'
-Bundle 'dgryski/vim-godef'
-Bundle 'pangloss/vim-javascript'
-" Bundle 'Python-mode-klen'
-" Bundle 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Lokaltog/vim-powerline'
+" Plugin 'jnwhiteh/vim-golang'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'scrooloose/syntastic'
+" Plugin 'dgryski/vim-godef'
+Plugin 'pangloss/vim-javascript'
+Plugin 'fatih/vim-go'
+" Plugin 'Python-mode-klen'
+" Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 " General "{{{
     set encoding=utf-8
@@ -144,6 +145,17 @@ Bundle 'pangloss/vim-javascript'
 
     autocmd FileType {txt,rst,markdown} set formatoptions+=t textwidth=72
     autocmd FileType go setlocal softtabstop=0 tabstop=4 shiftwidth=4 noexpandtab
+    au FileType go nmap <Leader>i <Plug>(go-info)
+    au FileType go nmap <Leader>gd <Plug>(go-doc)
+    au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+    au FileType go nmap <leader>r <Plug>(go-run)
+    au FileType go nmap <leader>b <Plug>(go-build)
+    au FileType go nmap <leader>t <Plug>(go-test)
+    au FileType go nmap <leader>c <Plug>(go-coverage)
+    au FileType go nmap gd <Plug>(go-def)
+    au FileType go nmap <Leader>ds <Plug>(go-def-split)
+    au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+    au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
     " Remove <tab> highlighting in cases were tabs are normal
     " and expected. This is a problem with solarized cs only. {Apparently fixed?}
