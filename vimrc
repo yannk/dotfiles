@@ -1,23 +1,17 @@
 set nocompatible  " disable vi compatibility.
-filetype off      " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-" Bundles
-Plugin 'gmarik/vundle'
-    " ^ otherwise BundleClean removes itself
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/vim-powerline'
-" Plugin 'jnwhiteh/vim-golang'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'scrooloose/syntastic'
-" Plugin 'dgryski/vim-godef'
-Plugin 'pangloss/vim-javascript'
-Plugin 'fatih/vim-go'
-" Plugin 'Python-mode-klen'
-" Plugin 'nsf/gocode', {'rtp': 'vim/'}
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Lokaltog/vim-powerline'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'scrooloose/syntastic'
+Plug 'pangloss/vim-javascript'
+Plug 'fatih/vim-go'
+Plug 'majutsushi/tagbar'
+Plug 'Shougo/neocomplete.vim'
+call plug#end()
 
 " General "{{{
     set encoding=utf-8
@@ -97,7 +91,7 @@ Plugin 'fatih/vim-go'
     set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
     set showcmd " show partial commands in status line and
                 " selected characters/lines in visual mode
- 
+
     set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
     set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 
@@ -148,14 +142,44 @@ Plugin 'fatih/vim-go'
     au FileType go nmap <Leader>i <Plug>(go-info)
     au FileType go nmap <Leader>gd <Plug>(go-doc)
     au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-    au FileType go nmap <leader>r <Plug>(go-run)
-    au FileType go nmap <leader>b <Plug>(go-build)
-    au FileType go nmap <leader>t <Plug>(go-test)
-    au FileType go nmap <leader>c <Plug>(go-coverage)
+    au FileType go nmap <Leader>r <Plug>(go-run)
+    au FileType go nmap <Leader>b <Plug>(go-build)
+    au FileType go nmap <Leader>t <Plug>(go-test)
+    au FileType go nmap <Leader>c <Plug>(go-coverage)
     au FileType go nmap gd <Plug>(go-def)
     au FileType go nmap <Leader>ds <Plug>(go-def-split)
     au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
     au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+    let g:go_fmt_command = "goimports"
+
+    let g:tagbar_type_go = {
+        \ 'ctagstype' : 'go',
+        \ 'kinds'     : [
+            \ 'p:package',
+            \ 'i:imports:1',
+            \ 'c:constants',
+            \ 'v:variables',
+            \ 't:types',
+            \ 'n:interfaces',
+            \ 'w:fields',
+            \ 'e:embedded',
+            \ 'm:methods',
+            \ 'r:constructor',
+            \ 'f:functions'
+        \ ],
+        \ 'sro' : '.',
+        \ 'kind2scope' : {
+            \ 't' : 'ctype',
+            \ 'n' : 'ntype'
+        \ },
+        \ 'scope2kind' : {
+            \ 'ctype' : 't',
+            \ 'ntype' : 'n'
+        \ },
+        \ 'ctagsbin'  : 'gotags',
+        \ 'ctagsargs' : '-sort -silent'
+    \ }
+
 
     " Remove <tab> highlighting in cases were tabs are normal
     " and expected. This is a problem with solarized cs only. {Apparently fixed?}
@@ -228,6 +252,12 @@ Plugin 'fatih/vim-go'
     noremap <Down> <nop>
     noremap <Left> <nop>
     noremap <Right> <nop>
+
+    nnoremap <silent> <Leader>ew :StripWhitespace<CR>
+    vnoremap <silent> <Leader>ew :StripWhitespace<CR>
+    nnoremap <silent> <Leader>t :TagbarToggle<CR>
+
+
 " " }}}
 
 " colors {
@@ -238,14 +268,12 @@ Plugin 'fatih/vim-go'
     "let g:solarized_termcolors=256 " this is degraded mode
                                     " http://ethanschoonover.com/solarized/vim-colors-solarized
     colorscheme solarized
-    " extraWS now taken care of in the plugin
-    nnoremap <silent> <leader>ew :FixWhitespace<CR>
-    " autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-    " nnoremap <silent> <leader>ew :let _s=@/<Bar>:%s=\s\+$==e<Bar>:let @/=_s<Bar>:nohl<CR>
 " }
+"
+let g:neocomplete#enable_at_startup = 1
 let g:Powerline_symbols = 'unicode'
 "let g:Powerline_symbols = 'fancy'
-
+"
 
 " Stolen from SPF13
 function! InitializeDirectories()
