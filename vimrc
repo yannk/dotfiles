@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'altercation/vim-colors-solarized'
-Plug 'Lokaltog/vim-powerline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/syntastic'
 Plug 'pangloss/vim-javascript'
@@ -12,6 +11,7 @@ Plug 'fatih/vim-go'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-unimpaired'
+Plug 'bling/vim-airline'
 call plug#end()
 
 " General "{{{
@@ -46,8 +46,8 @@ call plug#end()
     endif
 
     let g:is_posix = 1  " vim's default is archaic bourne shell, bring it up to the 90s
+    let g:neocomplete#enable_at_startup = 1
 " "}}}
-
 
 " Formatting "{{{
     set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
@@ -260,20 +260,34 @@ call plug#end()
     nnoremap <silent> <Leader>t :TagbarToggle<CR>
 " " }}}
 
-" colors {
+" chrome {{{
     set background=dark
     let g:solarized_termtrans=1
     let g:solarized_contrast="high"
     let g:solarized_visibility="high"
     "let g:solarized_termcolors=256 " this is degraded mode
-                                    " http://ethanschoonover.com/solarized/vim-colors-solarized
+    " http://ethanschoonover.com/solarized/vim-colors-solarized
     colorscheme solarized
-" }
-"
-let g:neocomplete#enable_at_startup = 1
-let g:Powerline_symbols = 'unicode'
-"let g:Powerline_symbols = 'fancy'
-"
+
+    let g:airline#extensions#tabline#enabled = 1
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+
+    " unicode symbols
+    let g:airline_left_sep = '»'
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '«'
+    let g:airline_right_sep = '◀'
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.linenr = '␤'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.paste = 'Þ'
+    let g:airline_symbols.paste = '∥'
+    let g:airline_symbols.whitespace = 'Ξ'
+" }}}
 
 " Stolen from SPF13
 function! InitializeDirectories()
