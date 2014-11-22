@@ -11,6 +11,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'fatih/vim-go'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/neocomplete.vim'
+Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 " General "{{{
@@ -188,12 +189,6 @@ call plug#end()
     "autocmd FileType make hi! SpecialKey cterm=none
 
     autocmd FileType gitcommit setlocal fo+=t " automatic word wrapping as I type
-
-    " Drupal stuff
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd FileType php setlocal softtabstop=2 expandtab tabstop=2 shiftwidth=2 autoindent smartindent
-
 " " }}}
 
 " Key mappings " {{{
