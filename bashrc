@@ -184,19 +184,11 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 #export PATH=$PATH:$HOME/dev/google-cloud-sdk-0.9.9/bin
 export PATH=$PATH:$HOME/dev/google-cloud-sdk/bin
-<<<<<<< HEAD
-# The next line enables bash completion for gcloud.
-source /Users/yann/dev/google-cloud-sdk/completion.bash.inc
-||||||| merged common ancestors
-# The next line enables bash completion for gcloud.
-source /Users/yann/dev/google-cloud-sdk/arg_rc
-=======
 
 gcloudrc=${HOME}/dev/google-cloud-sdk/arg_rc
 if [ -f $gcloudrc ]; then
     # The next line enables bash completion for gcloud.
     source $gcloudrc
 fi
->>>>>>> Update from new laptop setup
 
 source ~/dotfiles/bin/z.sh
