@@ -1,7 +1,7 @@
 DOTFILES := $(shell pwd)
 GIT := $(shell type -P git)
 
-all: prep git submodules _screen _shell _misc spf13-vim _vim
+all: prep git submodules _screen _shell _misc _vim
 
 prep:
 	-@mkdir ~/tmp
@@ -18,11 +18,12 @@ git:
 	ln -sf $(DOTFILES)/.gitignore 		${HOME}/.gitignore
 
 _vim:
-	-mkdir ${HOME}/.vim
-	-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	-mkdir -p ${HOME}/.vim/autoload
+	curl -fLo ${HOME}/.vim/autoload/plug.vim \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	ln -sf  $(DOTFILES)/vimrc           ${HOME}/.vimrc
-	-mkdir ${HOME}/.vim/syntax
-	ln -sf  $(DOTFILES)/python.vim ${HOME}/.vim/syntax/python.vim
+	#-mkdir ${HOME}/.vim/syntax
+	#ln -sf  $(DOTFILES)/python.vim ${HOME}/.vim/syntax/python.vim
 
 _screen:
 	-mkdir ${HOME}/.screen
@@ -37,7 +38,7 @@ _shell:
 	ln -sf  $(DOTFILES)/bashrc          ${HOME}/.bashrc
 	ln -sf  $(DOTFILES)/bash_profile    ${HOME}/.bash_profile
 	ln -sf  $(DOTFILES)/profile         ${HOME}/.profile
-	ln -sf  $(DOTFILES)/check_git_dotfiles.sh ${HOME}/.check_git_dotfiles.sh
+	#ln -sf  $(DOTFILES)/check_git_dotfiles.sh ${HOME}/.check_git_dotfiles.sh
 
 _misc:
 	ln -sf  $(DOTFILES)/ackrc ${HOME}/.ackrc

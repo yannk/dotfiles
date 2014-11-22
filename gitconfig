@@ -1,6 +1,6 @@
 [user]
-	name = Yann Kerherve
-	email = yann.kerherve@gmail.com
+	name = Yann Kerhervé
+	email = yannk@apple.com
 
 [color]
     diff = auto
@@ -10,8 +10,8 @@
 [color "diff"]
     meta = yellow
     frag = cyan
-    old = red bold
-    new = green bold
+    old = red
+    new = green
     whitespace = red reverse
 
 [alias]

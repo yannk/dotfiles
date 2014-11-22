@@ -3,3 +3,4 @@
 *.pyc
 /env/
 /spf13-vim
+.DS_Store

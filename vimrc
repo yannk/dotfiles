@@ -53,7 +53,7 @@ call plug#end()
     set fo+=c " Auto-wrap comments using textwidth
     set fo-=r " Do not automatically insert a comment leader after an enter
     set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
-    set fo+=j " Where it makes sense, remove a comment leader when joining lines
+    "set fo+=j " Where it makes sense, remove a comment leader when joining lines
 
     set wildmenu                    " show list instead of just completing
     set wildmode=longest,list       " At command line, complete longest common string, then list alternatives.
