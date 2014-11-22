@@ -189,6 +189,13 @@ call plug#end()
     "autocmd FileType make hi! SpecialKey cterm=none
 
     autocmd FileType gitcommit setlocal fo+=t " automatic word wrapping as I type
+
+    " Quick fix close on quit.
+    " http://stackoverflow.com/questions/7476126/how-to-automatically-close-the-quick-fix-window-when-leaving-a-file
+    aug QFClose
+        au!
+        au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
+    aug END
 " " }}}
 
 " Key mappings " {{{
@@ -251,8 +258,6 @@ call plug#end()
     nnoremap <silent> <Leader>ew :StripWhitespace<CR>
     vnoremap <silent> <Leader>ew :StripWhitespace<CR>
     nnoremap <silent> <Leader>t :TagbarToggle<CR>
-
-
 " " }}}
 
 " colors {
