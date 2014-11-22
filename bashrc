@@ -35,12 +35,6 @@ for completion_file in \
     fi
 done
 
-## check for git dot files in the background
-if [ -f ~/.check_git_dotfiles.sh ]; then
-    (~/.check_git_dotfiles.sh 2>&1 >/dev/null)&
-    disown %- 2>/dev/null
-fi
-
 export DISPLAY=:0.0
 # allow color with standard macosx tools
 export CLICOLOR=1
@@ -190,6 +184,6 @@ export PATH=$PATH:$GOPATH/bin
 #export PATH=$PATH:$HOME/dev/google-cloud-sdk-0.9.9/bin
 export PATH=$PATH:$HOME/dev/google-cloud-sdk/bin
 # The next line enables bash completion for gcloud.
-source /Users/yann/dev/google-cloud-sdk/arg_rc
+source /Users/yann/dev/google-cloud-sdk/completion.bash.inc
 
 source ~/dotfiles/bin/z.sh
