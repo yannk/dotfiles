@@ -15,7 +15,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=vim
-export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin::/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:$PATH
 export MANPATH=/opt/local/man/:$MANPATH
 #if [ -x /usr/libexec/java_home ]; then
 #    export JAVA_HOME=$(/usr/libexec/java_home)
@@ -38,10 +38,6 @@ done
 export DISPLAY=:0.0
 # allow color with standard macosx tools
 export CLICOLOR=1
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -177,12 +173,13 @@ if [ -f ~/.bash_local ]; then
 fi
 
 
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    export PATH=$HOME/bin:$PATH
+fi
 
-export GOPATH=$HOME/go
-#export GOPATH=`godep path`:$GOPATH
-export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
-#export PATH=$PATH:$HOME/dev/google-cloud-sdk-0.9.9/bin
+export GOPATH=$HOME
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:$HOME/dev/google-cloud-sdk/bin
 
 gcloudrc=${HOME}/dev/google-cloud-sdk/arg_rc
