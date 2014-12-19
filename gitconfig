@@ -26,6 +26,12 @@
     # http://gitster.livejournal.com/45019.html
     wsadd = "!sh -c 'git diff -- \"$@\" | git apply --cached --whitespace=fix;\
              git checkout -- ${1-.} \"$@\"' -"
+	change = codereview change
+	gofmt = codereview gofmt
+	mail = codereview mail
+	pending = codereview pending
+	submit = codereview submit
+	sync = codereview sync
 
 [core]
     editor = vim
@@ -43,3 +49,5 @@
 	keepBackup = true
 [push]
 	default = simple
+[credential]
+	helper = osxkeychain
