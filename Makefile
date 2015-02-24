@@ -1,6 +1,6 @@
 DOTFILES := $(shell pwd)
 
-all: prep git submodules _screen _shell _misc _vim
+all: prep git _screen _shell _misc _vim
 
 prep:
 	-@mkdir ~/tmp
