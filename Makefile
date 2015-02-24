@@ -1,17 +1,9 @@
 DOTFILES := $(shell pwd)
-GIT := $(shell type -P git)
 
 all: prep git submodules _screen _shell _misc _vim
 
 prep:
 	-@mkdir ~/tmp
-
-submodules:
-	if [ -x $(GIT) ]; then \
-		git submodule sync; \
-		git submodule init; \
-		git submodule update; \
-	fi
 
 git:
 	ln -sf $(DOTFILES)/gitconfig 		${HOME}/.gitconfig
@@ -22,8 +14,6 @@ _vim:
 	curl -fLo ${HOME}/.vim/autoload/plug.vim \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	ln -sf  $(DOTFILES)/vimrc           ${HOME}/.vimrc
-	#-mkdir ${HOME}/.vim/syntax
-	#ln -sf  $(DOTFILES)/python.vim ${HOME}/.vim/syntax/python.vim
 
 _screen:
 	-mkdir ${HOME}/.screen
@@ -31,7 +21,6 @@ _screen:
 	ln -sf  $(DOTFILES)/screenrc        ${HOME}/.screenrc
 	ln -sf  $(DOTFILES)/termcaprc		${HOME}/.termcaprc
 	ln -sf  $(DOTFILES)/tmux.conf       ${HOME}/.tmux.conf
-	touch ${HOME}/.screenrc-local
 
 _shell:
 	ln -sf  $(DOTFILES)/bashrc          ${HOME}/.bashrc
