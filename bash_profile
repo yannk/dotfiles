@@ -49,6 +49,10 @@ case "$TERM" in
     xterm-color|xterm-256color) color_prompt=yes;;
 esac
 
+if [ -f ~/.bash_local ]; then
+    . ~/.bash_local
+fi
+
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -68,10 +72,15 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUPSTREAM=git
 GIT_PS1_SHOWCOLORHINTS=true
+HOSTPS1COLOR=${HOSTPS1COLOR-"[0;31m"}
 # old settings
 #PS1='\[\033[38;5;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " [%s$(__git_dirty)]")\$ '
 # default from doc: PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
-PROMPT_COMMAND='__git_ps1 "\u@\033[1;35m\h\033[00m:\w" "\\\$ "'
+if [[ ("$color_prompt" = yes) ]]; then
+    PROMPT_COMMAND='__git_ps1 "\u@\033${HOSTPS1COLOR}\h\033[00m:\w" "\\\$ "'
+else
+    PROMPT_COMMAND='\u@\h:\w\$ '
+fi
 PS1='\u@\h:\w\$ '
 
 unset color_prompt force_color_prompt
@@ -136,10 +145,6 @@ _relocate_ssh_auth_sock() {
 #alias screen='_ssh_auth_save $(hostname); screen'
 #alias tmux='_ssh_auth_save $(hostname); tmux'
 _relocate_ssh_auth_sock $(hostname)
-
-if [ -f ~/.bash_local ]; then
-    . ~/.bash_local
-fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
