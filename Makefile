@@ -28,9 +28,10 @@ _shell:
 	ln -sf  $(DOTFILES)/profile         ${HOME}/.profile
 
 _go:
-	mkdir -p ~/bin
-	mkdir -p ~/src
-	mkdir -p ~/pkg
+	cd ~; curl https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz | tar xz; \
+	mv go go1.4; \
+	git clone https://go.googlesource.com/go; \
+	(cd go/src && ./make.bash)
 	go get golang.org/x/tools/cmd/goimports golang.org/x/review/git-codereview github.com/tools/godep golang.org/x/tools/cmd/vet github.com/golang/lint/golint golang.org/x/tools/cmd/cover
 
 _misc:
