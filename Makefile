@@ -29,4 +29,5 @@ _shell:
 
 _misc:
 	ln -sf  $(DOTFILES)/ackrc ${HOME}/.ackrc
+	go get golang.org/x/tools/cmd/goimports golang.org/x/review/git-codereview github.com/tools/godep golang.org/x/tools/cmd/vet github.com/golang/lint/golint golang.org/x/tools/cmd/cover
 	#update-alternatives --install /usr/bin/ack ack /usr/bin/ack-grep 100
