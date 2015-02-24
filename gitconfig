@@ -1,6 +1,9 @@
 [user]
 	name = Yann Kerhervé
-	email = yannk@apple.com
+	email = yann.kerherve@gmail.com
+
+[include]
+    path = ~/.gitlocal
 
 [color]
     diff = auto
@@ -52,4 +55,4 @@
 [credential]
 	helper = osxkeychain
 [http]
-	cookiefile = /Users/yann/.gitcookies
+	cookiefile = ~/.gitcookies
