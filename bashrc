@@ -17,6 +17,7 @@ export LANG=en_US.UTF-8
 export EDITOR=vim
 export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:$PATH
 export MANPATH=/opt/local/man/:$MANPATH
+export GOPATH=$HOME
 #if [ -x /usr/libexec/java_home ]; then
 #    export JAVA_HOME=$(/usr/libexec/java_home)
 #fi
