@@ -1,6 +1,6 @@
 DOTFILES := $(shell pwd)
 
-all: prep git _screen _shell _misc _vim
+all: prep git _screen _shell _misc _vim _go
 
 prep:
 	-@mkdir ~/tmp
@@ -27,7 +27,12 @@ _shell:
 	ln -sf  $(DOTFILES)/bash_profile    ${HOME}/.bash_profile
 	ln -sf  $(DOTFILES)/profile         ${HOME}/.profile
 
+_go:
+	mkdir -p ~/bin
+	mkdir -p ~/src
+	mkdir -p ~/pkg
+	go get golang.org/x/tools/cmd/goimports golang.org/x/review/git-codereview github.com/tools/godep golang.org/x/tools/cmd/vet github.com/golang/lint/golint golang.org/x/tools/cmd/cover
+
 _misc:
 	ln -sf  $(DOTFILES)/ackrc ${HOME}/.ackrc
-	go get golang.org/x/tools/cmd/goimports golang.org/x/review/git-codereview github.com/tools/godep golang.org/x/tools/cmd/vet github.com/golang/lint/golint golang.org/x/tools/cmd/cover
 	#update-alternatives --install /usr/bin/ack ack /usr/bin/ack-grep 100
