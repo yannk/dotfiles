@@ -28,7 +28,6 @@ _vim:
 _screen:
 	-mkdir ${HOME}/.screen
 	-mkdir ${HOME}/.tmux
-	ln -sf  $(DOTFILES)/screen_name     ${HOME}/.screen_name
 	ln -sf  $(DOTFILES)/screenrc        ${HOME}/.screenrc
 	ln -sf  $(DOTFILES)/termcaprc		${HOME}/.termcaprc
 	ln -sf  $(DOTFILES)/tmux.conf       ${HOME}/.tmux.conf

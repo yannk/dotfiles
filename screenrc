@@ -15,7 +15,7 @@ startup_message off
 
 defscrollback 5000
 
-backtick 10 86400 86400 perl $HOME/.screen_name yann
+#backtick 10 86400 86400 perl $HOME/.screen_name yann
 
 hardstatus on
 hardstatus alwayslastline
