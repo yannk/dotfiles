@@ -1,6 +1,6 @@
 DOTFILES := $(shell pwd)
 
-all: prep git _screen _shell _misc _vim _go
+all: prep git _screen _shell _misc _vim
 
 prep:
 	-@mkdir ~/tmp
@@ -27,12 +27,12 @@ _shell:
 	ln -sf  $(DOTFILES)/bash_profile    ${HOME}/.bash_profile
 	ln -sf  $(DOTFILES)/profile         ${HOME}/.profile
 
-_go:
+golinux:
 	cd ~; rm -fr go/; curl https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz | tar xz; \
 	(cd go/src && ./make.bash)
 	go get golang.org/x/tools/cmd/goimports golang.org/x/review/git-codereview github.com/tools/godep golang.org/x/tools/cmd/vet github.com/golang/lint/golint golang.org/x/tools/cmd/cover
 
-_gotip:
+gotiplinux:
 	cd ~; curl https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz | tar xz; \
 	mv go go1.4; \
 	git clone https://go.googlesource.com/go; \
