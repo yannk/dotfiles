@@ -24,6 +24,9 @@ done
 # allow color with standard macosx tools
 export CLICOLOR=1
 
+## tempted to add that to avoid a dreaded ^Rrm that goes wrong
+## at the same time, it hasn't happened to me in years.
+#export HISTIGNORE="history:pwd:df:ls *:ll:"
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
@@ -72,16 +75,22 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUPSTREAM=git
 GIT_PS1_SHOWCOLORHINTS=true
-HOSTPS1COLOR=${HOSTPS1COLOR-"[0;31m"}
+HOSTPS1COLOR=${HOSTPS1COLOR-"0;31m"}
+
 # old settings
 #PS1='\[\033[38;5;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " [%s$(__git_dirty)]")\$ '
 # default from doc: PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
 if [[ ("$color_prompt" = yes) ]]; then
-    PROMPT_COMMAND='__git_ps1 "\u@\033${HOSTPS1COLOR}\h\033[00m:\w" "\\\$ "'
+    # \[ and \] are escape codes for Readline, meaning RL_PROMPT_START_IGNORE and RL_PROMPT_END_IGNORE
+    # which counts as 0 length: http://stackoverflow.com/questions/24839271/bash-ps1-line-wrap-issue-with-non-printing-characters-from-an-external-command
+    # \e is equivalent of \033
+    PROMPT_COMMAND='__git_ps1 "\u@\[\e[$HOSTPS1COLOR\]\h\[\e[0m\]\w" "\\\$ "'
+
+    #PROMPT_COMMAND='PS1=$(echo -n "HI! \u@\h:\w\$ ")'
 else
-    PROMPT_COMMAND='\u@\h:\w\$ '
+    unset PROMPT_COMMAND
+    PS1="\u@\h:\w\$ "
 fi
-PS1='\u@\h:\w\$ '
 
 unset color_prompt force_color_prompt
 
