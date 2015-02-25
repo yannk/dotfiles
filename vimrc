@@ -23,7 +23,7 @@ call plug#end()
         set undoreload=10000        "maximum number lines to save for undo on a buffer reload
     endif
     "" Save many many lines in viminfo
-    set viminfo='20,"1000
+    set viminfo='30,\"1000,:30,%
     set autowrite  " Writes on make/shell commands
     set autoread
     set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
