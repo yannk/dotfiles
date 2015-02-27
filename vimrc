@@ -12,6 +12,7 @@ Plug 'majutsushi/tagbar'
 Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'bling/vim-airline'
+Plug 'bkad/CamelCaseMotion'
 call plug#end()
 
 " General "{{{
