@@ -257,7 +257,6 @@ call plug#end()
     noremap <Right> <nop>
 
     nnoremap <silent> <Leader>ew :StripWhitespace<CR>
-    vnoremap <silent> <Leader>ew :StripWhitespace<CR>
     nnoremap <silent> <Leader>t :TagbarToggle<CR>
 " " }}}
 
