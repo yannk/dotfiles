@@ -10,12 +10,8 @@ fi
 ## this is specific to macosx + macports
 for completion_file in \
     /etc/bash_completion \
-    /etc/bash_completion.d/git \
     /opt/local/etc/bash_completion \
-    /opt/local/etc/bash_completion.d/git \
-    /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh \
-    /usr/local/opt/git/etc/bash_completion.d/git-completion.bash \
-    /usr/local/git/contrib/completion/git-completion.bash; do
+    /usr/local/etc/bash_completion; do
     if [ -f $completion_file ]; then
         source $completion_file
     fi
