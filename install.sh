@@ -28,3 +28,5 @@ ln -sf ${DOTFILES}/profile ${HOME}/.profile
 mkdir -p ${HOME}/.config/fish
 ln -sf ${DOTFILES}/fish/config ${HOME}/.config/fish/config.fish
 ln -sf ${DOTFILES}/fish/functions ${HOME}/.config/fish/functions
+
+. update-z.sh
