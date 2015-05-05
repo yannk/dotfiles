@@ -140,6 +140,7 @@ call plug#end()
 
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute "normal g'\"" | endif " restore position in file
 
+    autocmd filetype crontab setlocal nobackup nowritebackup
     autocmd FileType {txt,rst,markdown} set formatoptions+=t textwidth=72
     autocmd FileType go setlocal softtabstop=0 tabstop=4 shiftwidth=4 noexpandtab
     au FileType go nmap <Leader>gi <Plug>(go-info)
