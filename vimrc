@@ -13,6 +13,8 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'bling/vim-airline'
 Plug 'bkad/CamelCaseMotion'
+Plug 'sjl/vitality.vim'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " General "{{{
@@ -80,7 +82,6 @@ call plug#end()
 " "}}}
 
 " Visual "{{{
-    set nonumber      " Line numbers off
     set showmatch     " Show matching brackets.
     set matchtime=5   " Bracket blinking.
     set novisualbell  " No blinking
@@ -200,6 +201,7 @@ call plug#end()
 " " }}}
 
 " Key mappings " {{{
+
     let mapleader = ','
     let maplocalleader = '	'
     nnoremap <silent> <LocalLeader>rs :source ~/.vimrc<CR>
@@ -243,6 +245,9 @@ call plug#end()
     nmap :W :w
     nmap :Q :q
 
+    " sudo then write
+    cabbrev w!! w !sudo tee % >/dev/null
+
     " Convert file format to unix
     nmap _ux :se ff=unix<CR>
 
@@ -258,7 +263,44 @@ call plug#end()
 
     nnoremap <silent> <Leader>ew :StripWhitespace<CR>
     nnoremap <silent> <Leader>t :TagbarToggle<CR>
-" " }}}
+
+    "" By default enable hybrid line numbers,
+    "" but define easy mapping to kill the gutter
+    set relativenumber
+    set number
+
+    function! NumbersOff()
+        set norelativenumber
+        set nonumber
+    endfunc
+
+    function! NumbersOn()
+        set relativenumber
+        set number
+    endfunc
+
+    function! ToggleNumbers()
+        if(&relativenumber)
+            call NumbersOff()
+        else
+            call NumbersOn()
+        endif
+    endfunc
+
+    function! ToggleGutters()
+        if g:gitgutter_enabled
+            call NumbersOff()
+            GitGutterDisable
+        else
+            call NumbersOn()
+            GitGutterEnable
+        endif
+    endfunc
+
+    nnoremap <silent> <Leader>n :call ToggleNumbers()<CR>
+    " toggle ALL gutter stuff
+    nnoremap <silent> <Leader>g :call ToggleGutters()<CR>
+" }}}
 
 " chrome {{{
     set background=dark
