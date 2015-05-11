@@ -50,6 +50,7 @@ call plug#end()
 
     let g:is_posix = 1  " vim's default is archaic bourne shell, bring it up to the 90s
     let g:neocomplete#enable_at_startup = 1
+    set completeopt=menu
 " "}}}
 
 " Formatting "{{{
