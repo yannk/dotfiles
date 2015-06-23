@@ -15,6 +15,7 @@ Plug 'bling/vim-airline'
 Plug 'bkad/CamelCaseMotion'
 Plug 'sjl/vitality.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'keith/swift.vim'
 call plug#end()
 
 " General "{{{
