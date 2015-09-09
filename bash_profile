@@ -23,7 +23,7 @@ export CLICOLOR=1
 ## tempted to add that to avoid a dreaded ^Rrm that goes wrong
 ## at the same time, it hasn't happened to me in years.
 #export HISTIGNORE="history:pwd:df:ls *:ll:"
-export HISTCONTROL=ignoredups:erasedups
+export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 
