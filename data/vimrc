@@ -28,6 +28,10 @@ call plug#end()
         set undolevels=1000         "maximum number of changes that can be undone
         set undoreload=10000        "maximum number lines to save for undo on a buffer reload
     endif
+
+    "" not fish
+    set shell=sh
+
     "" Save many many lines in viminfo
     set viminfo='30,\"1000,:30,%
     set autowrite  " Writes on make/shell commands

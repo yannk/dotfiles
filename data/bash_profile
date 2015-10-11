@@ -169,4 +169,4 @@ for extra_path in \
     fi
 done
 
-source ~/dotfiles/bin/z.sh
+source ~/._z/bash
