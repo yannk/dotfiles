@@ -59,6 +59,8 @@ export PATH="/Users/yann/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/
 source $ZSH/oh-my-zsh.sh
 source $HOME/._z/bash
 
+# zstyle :omz:plugins:ssh-agent agent-forwarding on
+#
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 
@@ -90,3 +92,5 @@ alias igt=git
 alias gt=git
 alias gi=git
 alias vi=vim
+
+. $HOME/dotfiles/data/relocate-ssh

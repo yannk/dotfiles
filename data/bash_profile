@@ -134,27 +134,6 @@ _ssh_auth_save() {
     ln -sf "$SSH_AUTH_SOCK" $MUX_SSH_AUTH_SOCK
 }
 
-_relocate_ssh_auth_sock() {
-    local SSHID=$1
-    local BASE=$HOME/.ssh
-    local SOCK=$BASE/ssh-auth-sock.$SSHID
-    if [ -z $SSH_AUTH_SOCK ]; then
-        return
-    fi
-    if [ -n $SOCK ] && [ "$SOCK" != "$SSH_AUTH_SOCK" ]; then
-        if [ ! -d $BASE ]; then
-            mkdir -p $BASE && chmod 0700 $BASE
-        fi
-        rm -f $SOCK
-        ln -sf "$SSH_AUTH_SOCK" "$SOCK"
-        export SSH_AUTH_SOCK=$SOCK
-    fi
-}
-## commented to instead put SSH_AUTH_SOCK in a predictable place
-#alias screen='_ssh_auth_save $(hostname); screen'
-#alias tmux='_ssh_auth_save $(hostname); tmux'
-_relocate_ssh_auth_sock $(hostname)
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     export PATH=$HOME/bin:$PATH
@@ -168,5 +147,7 @@ for extra_path in \
         export PATH=$PATH:$extra_path
     fi
 done
+
+. $HOME/dotfiles/data/relocate-ssh
 
 source ~/._z/bash
