@@ -1,5 +1,9 @@
 . $HOME/._z/fish
 
+
+set -x GOPATH $HOME
+set PATH $PATH /usr/local/go/bin
+
 alias ci=vim
 alias gti=git
 alias igt=git
