@@ -59,6 +59,8 @@ export PATH="{$HOME}/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/loca
 source $ZSH/oh-my-zsh.sh
 source $HOME/._z/bash
 
+setopt no_hist_verify
+
 # zstyle :omz:plugins:ssh-agent agent-forwarding on
 #
 # You may need to manually set your language environment
