@@ -21,7 +21,7 @@ hardstatus on
 hardstatus alwayslastline
 hardstatus string "%10` %{dd} %{r}%n  %{-b dd}%-w%{b}%n* %t%{-}%+w%<"
 term xterm-256color
-shell -bash
+#shell -bash
 
 encoding UTF-8
 defutf8 on
