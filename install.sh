@@ -25,6 +25,9 @@ ln -sf ${DOTFILES}/bashrc ${HOME}/.bashrc
 ln -sf ${DOTFILES}/bash_profile ${HOME}/.bash_profile
 ln -sf ${DOTFILES}/profile ${HOME}/.profile
 ln -sf ${DOTFILES}/zshrc ${HOME}/.zshrc
+if [ ! -d ${HOME}/.oh-my-zsh ]; then
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
+fi
 
 mkdir -p ${HOME}/.config/fish
 ln -sf ${DOTFILES}/fish/config ${HOME}/.config/fish/config.fish
