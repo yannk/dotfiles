@@ -53,13 +53,22 @@ plugins=(git golang)
 
 # User configuration
 
-export PATH="{$HOME}/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
+export PATH="${HOME}/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+export GOPATH=$HOME
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/._z/bash
 
 setopt no_hist_verify
+
+#autoload -U select-word-style
+#select-word-style bash
+bindkey '^w' backward-kill-word       # as before
+autoload -U backward-kill-word-match
+zle -N backward-kill-word backward-kill-word-match
+zstyle ':zle:backward-kill-word' word-style whitespace
 
 # zstyle :omz:plugins:ssh-agent agent-forwarding on
 #
