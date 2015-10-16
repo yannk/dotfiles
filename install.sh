@@ -2,6 +2,9 @@
 
 DOTFILES=$(pwd)/data
 
+# ack
+ln -sf ${DOTFILES}/ackrc ${HOME}/.ackrc
+
 # git
 ln -sf ${DOTFILES}/gitconfig ${HOME}/.gitconfig
 ln -sf ${DOTFILES}/gitignore ${HOME}/.gitignore
