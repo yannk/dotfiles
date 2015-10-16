@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 DOTFILES=$(pwd)/data
 
@@ -34,6 +34,6 @@ fi
 
 mkdir -p ${HOME}/.config/fish
 ln -sf ${DOTFILES}/fish/config ${HOME}/.config/fish/config.fish
-ln -shF ${DOTFILES}/fish/functions ${HOME}/.config/fish/functions
+ln -sF ${DOTFILES}/fish/functions ${HOME}/.config/fish/functions
 
 . update-z.sh
