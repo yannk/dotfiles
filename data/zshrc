@@ -108,4 +108,6 @@ alias gt=git
 alias gi=git
 alias vi=vim
 
+export LESS="-F -r -X"
+
 . $HOME/dotfiles/data/relocate-ssh
