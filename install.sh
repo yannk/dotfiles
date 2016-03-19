@@ -36,4 +36,8 @@ mkdir -p ${HOME}/.config/fish
 ln -sf ${DOTFILES}/fish/config ${HOME}/.config/fish/config.fish
 ln -sF ${DOTFILES}/fish/functions ${HOME}/.config/fish/functions
 
+mkdir -p ${HOME}/.config/nvim
+ln -sf ${DOTFILES}/init.nvim ${HOME}/.config/nvim/init.vim
+curl -fLo ${HOME}/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 . update-z.sh
