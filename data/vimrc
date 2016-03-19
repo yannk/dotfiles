@@ -8,9 +8,11 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/syntastic'
 Plug 'pangloss/vim-javascript'
 Plug 'fatih/vim-go'
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+" should be part of vim-go
+"Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/neocomplete.vim'
+"Plug 'Shougo/echodoc.vim'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-unimpaired'
 Plug 'bling/vim-airline'
@@ -57,6 +59,9 @@ call plug#end()
 
     let g:is_posix = 1  " vim's default is archaic bourne shell, bring it up to the 90s
     let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#sources#omni#functions = {'go': 'go#complete#Complete'}
+    "let g:echodoc_enable_at_startup = 1
+    " set cmdheight=2
     set completeopt=menu
 " "}}}
 
@@ -191,6 +196,14 @@ call plug#end()
         \ 'ctagsbin'  : 'gotags',
         \ 'ctagsargs' : '-sort -silent'
     \ }
+
+    " (test)
+	" Highlight
+	let g:go_highlight_functions = 1
+	let g:go_highlight_methods = 1
+	let g:go_highlight_structs = 1
+	let g:go_highlight_operators = 1
+	let g:go_highlight_build_constraints = 1
 
 
     " Remove <tab> highlighting in cases were tabs are normal
