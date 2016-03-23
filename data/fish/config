@@ -2,7 +2,13 @@
 
 #fish_vi_mode
 
-set -x GOPATH (realpath $HOME)
+if which realpath
+    # FreeBSD
+    set -x GOPATH (realpath $HOME)
+else
+    # OS X (I'm lazy, I know realpath is not necessary then)
+    set -x GOPATH $HOME
+end
 set PATH $PATH /usr/local/go/bin
 set PATH $PATH $HOME/bin
 
