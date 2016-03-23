@@ -2,7 +2,7 @@
 
 #fish_vi_mode
 
-if which realpath
+if which realpath > /dev/null
     # FreeBSD
     set -x GOPATH (realpath $HOME)
 else
