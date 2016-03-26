@@ -109,6 +109,17 @@ function! ToggleNumbers()
         call NumbersOn()
     endif
 endfunc
+
+function! ToggleGutters()
+    if g:gitgutter_enabled
+        call NumbersOff()
+        GitGutterDisable
+    else
+        call NumbersOn()
+        GitGutterEnable
+    endif
+endfunc
+
 nnoremap <silent> <Leader>n :call ToggleNumbers()<CR>
 " toggle ALL gutter stuff
 nnoremap <silent> <Leader>g :call ToggleGutters()<CR>
