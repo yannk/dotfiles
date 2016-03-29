@@ -38,6 +38,27 @@ set shell=/bin/sh
 set novisualbell  " No blinking
 set noerrorbells  " No noise.
 
+function! InitializeDir(dir)
+    if exists("*mkdir")
+        if !isdirectory(a:dir)
+            call mkdir(a:dir)
+        endif
+    endif
+    if !isdirectory(a:dir)
+        echo "Warning: Unable to create backup directory: " . a:dir
+        echo "Try: mkdir -p " . a:dir
+    endif
+endfunction
+
+call InitializeDir($HOME . "/.local/share/nvim/backup/")
+set backupdir=~/.local/share/nvim/backup/
+set backup
+"set clipboard=unnamed
+
+set undofile                "so is persistent undo ...
+set undolevels=1000         "maximum number of changes that can be undone
+set undoreload=10000        "maximum number lines to save for undo on a buffer reload
+
 let mapleader = ','
 let maplocalleader = '  '
 
@@ -145,8 +166,8 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " Sometimes when using both vim-go and syntastic Vim will start lagging while saving and opening files. The following fixes this:
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " https://github.com/fatih/dotfiles/blob/master/init.vim
 " I want to use my tab more smarter. If we are inside a completion menu jump
