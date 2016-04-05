@@ -1,5 +1,8 @@
 . $HOME/._z/fish
 
+# relocate ssh
+relocate_ssh_auth_sock (hostname)
+
 #fish_vi_mode
 
 if which realpath > /dev/null
