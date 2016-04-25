@@ -26,6 +26,7 @@ call plug#end()
 
 set cmdheight=2 " needed for echodoc
 set completeopt+=noinsert,menu,menuone
+set completeopt+=noselect
 set completeopt-=preview
 
 let g:acp_enableAtStartup = 0
@@ -55,11 +56,13 @@ endfunction
 call InitializeDir($HOME . "/.local/share/nvim/backup/")
 set backupdir=~/.local/share/nvim/backup/
 set backup
-"set clipboard=unnamed
+"set clipboard=unnamed,unnamedplus
 
 set undofile                "so is persistent undo ...
 set undolevels=1000         "maximum number of changes that can be undone
 set undoreload=10000        "maximum number lines to save for undo on a buffer reload
+
+set shada='150,<2000,s100
 
 let mapleader = ','
 let maplocalleader = '  '
