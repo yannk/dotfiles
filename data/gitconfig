@@ -29,12 +29,16 @@
     # http://gitster.livejournal.com/45019.html
     wsadd = "!sh -c 'git diff -- \"$@\" | git apply --cached --whitespace=fix;\
              git checkout -- ${1-.} \"$@\"' -"
-	change = codereview change
-	gofmt = codereview gofmt
-	mail = codereview mail
-	pending = codereview pending
-	submit = codereview submit
-	sync = codereview sync
+	change = gerrit change
+	gofmt = gerrit gofmt
+	mail = gerrit mail
+	pending = gerrit pending
+	submit = gerrit submit
+	sync = gerrit sync
+	get = gerrit get
+	repo = gerrit repo
+	cleanup = gerrit cleanup
+	rebase-work = gerrit rebase-work
 
 [core]
     editor = vim
