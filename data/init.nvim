@@ -1,5 +1,7 @@
 call plug#begin('~/.config/nvim/plugged')
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-markdown'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ntpeters/vim-better-whitespace'
