@@ -17,7 +17,7 @@ Plug 'sjl/vitality.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'keith/swift.vim'
 Plug 'Shougo/echodoc.vim'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
