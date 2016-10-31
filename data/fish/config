@@ -3,7 +3,7 @@
 # relocate ssh
 relocate_ssh_auth_sock (hostname)
 
-#fish_vi_mode
+fish_vi_key_bindings
 
 if which realpath > /dev/null
     # FreeBSD
@@ -13,7 +13,7 @@ else
     set -x GOPATH $HOME
 end
 set PATH $PATH /usr/local/go/bin
-set PATH $PATH $HOME/bin
+set PATH $HOME/bin $PATH
 
 alias ci=vim
 alias gti=git
