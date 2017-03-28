@@ -39,6 +39,7 @@
 	pending = gerrit pending
 	change = gerrit change
 	gofmt = gerrit gofmt
+	commit = gerrit commit
 
 [core]
     editor = vim
