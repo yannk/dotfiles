@@ -1,9 +1,8 @@
 #!/bin/sh
 
-DOTFILES=$(pwd)/data
+set -euo pipefail
 
-# ack
-ln -sf ${DOTFILES}/ackrc ${HOME}/.ackrc
+DOTFILES=$(pwd)/data
 
 # git
 ln -sf ${DOTFILES}/gitconfig ${HOME}/.gitconfig
