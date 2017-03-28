@@ -9,10 +9,6 @@ ln -sf ${DOTFILES}/gitconfig ${HOME}/.gitconfig
 ln -sf ${DOTFILES}/gitignore ${HOME}/.gitignore
 
 # vim
-mkdir -p ~/tmp
-mkdir -p ${HOME}/.vim/autoload
-curl -fLo ${HOME}/.vim/autoload/plug.vim \
-	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -sf  ${DOTFILES}/vimrc ${HOME}/.vimrc
 
 # term multiplexers
@@ -26,10 +22,6 @@ ln -sf ${DOTFILES}/tmux.conf ${HOME}/.tmux.conf
 ln -sf ${DOTFILES}/bashrc ${HOME}/.bashrc
 ln -sf ${DOTFILES}/bash_profile ${HOME}/.bash_profile
 ln -sf ${DOTFILES}/profile ${HOME}/.profile
-ln -sf ${DOTFILES}/zshrc ${HOME}/.zshrc
-if [ ! -d ${HOME}/.oh-my-zsh ]; then
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
-fi
 
 mkdir -p ${HOME}/.config/fish
 ln -sf ${DOTFILES}/fish/config ${HOME}/.config/fish/config.fish
@@ -37,6 +29,7 @@ ln -sF ${DOTFILES}/fish/functions ${HOME}/.config/fish/functions
 
 mkdir -p ${HOME}/.config/nvim
 ln -sf ${DOTFILES}/init.nvim ${HOME}/.config/nvim/init.vim
-curl -fLo ${HOME}/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 . update-z.sh
