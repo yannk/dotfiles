@@ -3,7 +3,7 @@
 # relocate ssh
 relocate_ssh_auth_sock (hostname)
 
-fish_vi_key_bindings
+#fish_vi_key_bindings
 
 if which realpath > /dev/null
     # FreeBSD
