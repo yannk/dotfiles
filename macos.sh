@@ -51,6 +51,10 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 
+# iTerm reads prefs from me
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -int 1
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "/Users/yann/src/github.com/yannk/dotfiles/data"
+
 killall Dock
 killall Finder
 killall SystemUIServer
