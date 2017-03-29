@@ -103,6 +103,10 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
+augroup filetypedetect
+    au BufRead,BufNewFile *.nvim set filetype=vim
+augroup END
+
 let g:go_snippet_engine = "neosnippet"
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
