@@ -22,6 +22,7 @@ ln -sf ${DOTFILES}/tmux.conf ${HOME}/.tmux.conf
 ln -sf ${DOTFILES}/bashrc ${HOME}/.bashrc
 ln -sf ${DOTFILES}/bash_profile ${HOME}/.bash_profile
 ln -sf ${DOTFILES}/profile ${HOME}/.profile
+ln -sf ${DOTFILES}/relocate-ssh ${HOME}/.relocate-ssh.bash
 
 mkdir -p ${HOME}/.config/fish
 ln -sf ${DOTFILES}/fish/config ${HOME}/.config/fish/config.fish

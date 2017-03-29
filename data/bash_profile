@@ -148,6 +148,6 @@ for extra_path in \
     fi
 done
 
-. $HOME/dotfiles/data/relocate-ssh
+. $HOME/.relocate-ssh.bash
 
 source ~/._z/bash
