@@ -514,7 +514,7 @@
 	<key>LeftOption</key>
 	<integer>2</integer>
 	<key>LoadPrefsFromCustomFolder</key>
-	<true/>
+	<integer>1</integer>
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSFontPanelAttributes</key>
@@ -581,11 +581,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>283 90 796 473 0 0 1680 1028 </string>
+	<string>283 134 796 473 0 0 1680 1028 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>127 444 592 584 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 576 970 452 0 0 1680 1028 </string>
+	<string>0 599 970 427 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>232 227 865 426 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2952,9 +2952,9 @@
 			<key>Background Image Is Tiled</key>
 			<false/>
 			<key>Background Image Location</key>
-			<string>/Users/yann/Pictures/icloud-background.jpg</string>
+			<string>/Users/yann/src/github.com/yannk/dotfiles/data/icloud-background.jpg</string>
 			<key>Blend</key>
-			<real>0.5</real>
+			<real>0.2676144330929488</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
@@ -2962,7 +2962,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>2</real>
+			<real>2.9112527760152278</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3356,7 +3356,7 @@
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
-			<real>0.0</real>
+			<real>0.35077136075949367</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -3367,6 +3367,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>SourceCodePro-Regular 13</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -3522,7 +3524,7 @@
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.29999999999999999</real>
+			<real>0.29225491751269034</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -3647,7 +3649,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-03-29T02:57:46Z</date>
+	<date>2017-03-30T09:17:47Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
