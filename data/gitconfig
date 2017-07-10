@@ -5,6 +5,9 @@
 [include]
     path = ~/.gitlocal
 
+[includeIf "gitdir:.apple.com/"]
+    path = ~/.gitconfig-apple
+
 [color]
     diff = auto
     status = auto
