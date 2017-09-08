@@ -7,6 +7,8 @@ DOTFILES=$(pwd)/data
 # git
 ln -sf ${DOTFILES}/gitconfig ${HOME}/.gitconfig
 ln -sf ${DOTFILES}/gitignore ${HOME}/.gitignore
+curl -o ${HOME}/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+
 
 # vim
 ln -sf  ${DOTFILES}/vimrc ${HOME}/.vimrc
