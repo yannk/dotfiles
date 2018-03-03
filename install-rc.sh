@@ -28,7 +28,8 @@ ln -sf ${DOTFILES}/relocate-ssh ${HOME}/.relocate-ssh.bash
 
 mkdir -p ${HOME}/.config/fish
 ln -sf ${DOTFILES}/fish/config ${HOME}/.config/fish/config.fish
-ln -sF ${DOTFILES}/fish/functions ${HOME}/.config/fish/functions
+ln -snfF ${DOTFILES}/fish/functions ${HOME}/.config/fish/functions
+curl -fLo - https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/functions/__fish_git_prompt.fish | sed 's/set -a/set/g' > ${HOME}/.config/fish/functions/__fish_git_prompt.fish
 
 mkdir -p ${HOME}/.config/nvim
 ln -sf ${DOTFILES}/init.nvim ${HOME}/.config/nvim/init.vim
