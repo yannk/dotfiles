@@ -12,8 +12,13 @@ else
     # OS X (I'm lazy, I know realpath is not necessary then)
     set -x GOPATH $HOME
 end
-set PATH $PATH /usr/local/go/bin
-set PATH $HOME/bin $PATH
+
+
+for p in /usr/local/go/bin $HOME/bin
+    if test -e $p
+        set PATH $PATH $p
+    end
+end
 
 alias ci=vim
 alias gti=git
