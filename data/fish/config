@@ -54,3 +54,5 @@ set __fish_git_prompt_char_upstream_behind '↓'
 set __fish_git_prompt_char_upstream_diverged '<>'
 set __fish_git_prompt_char_upstream_equal '='
 set __fish_git_prompt_char_upstream_prefix ''
+
+source ~/.iterm2_shell_integration.(basename $SHELL)
