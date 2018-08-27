@@ -113,6 +113,19 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 autocmd FileType go let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
+
+" Sometimes when using both vim-go and syntastic Vim will start lagging while saving and opening files. The following fixes this:
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+" make lnext work
+let g:syntastic_always_populate_loc_list = 1
+
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+>>>>>>> Stashed changes
 let g:go_fmt_command = "goimports"
 
 nnoremap <silent> <Leader>ew :StripWhitespace<CR>
@@ -174,10 +187,6 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
-
-" Sometimes when using both vim-go and syntastic Vim will start lagging while saving and opening files. The following fixes this:
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " https://github.com/fatih/dotfiles/blob/master/init.vim
 " I want to use my tab more smarter. If we are inside a completion menu jump

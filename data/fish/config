@@ -27,6 +27,8 @@ alias gt=git
 alias gi=git
 alias vi=nvim
 alias vim=nvim
+alias qq="touch /tmp/q; tail -100f /tmp/q"
+alias rmqq="rm /tmp/q"
 
 alias whoisa="whois -h whois.apple.com"
 
