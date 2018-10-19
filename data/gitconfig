@@ -62,4 +62,4 @@
 [push]
 	default = simple
 [http]
-	cookiefile = /Users/yann/.gitcookies
+	cookiefile = ~/.gitcookies
