@@ -16,3 +16,5 @@ export MANPATH=/opt/local/man/:$MANPATH
 export GOPATH=$(cd $HOME; pwd -P)
 
 export LESS="-F -r -X"
+
+complete -C /usr/local/bin/vault vault
