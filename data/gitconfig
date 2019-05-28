@@ -5,7 +5,7 @@
 [include]
     path = ~/.gitlocal
 
-[includeIf "gitdir:*.apple.com/"]
+[includeIf "gitdir:**/*.apple.com/"]
     path = ~/.gitconfig-apple
 
 [color]
