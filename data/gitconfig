@@ -63,3 +63,5 @@
 	default = simple
 [http]
 	cookiefile = ~/.gitcookies
+[help]
+	autocorrect = 10
