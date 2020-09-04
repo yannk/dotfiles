@@ -5,15 +5,6 @@ relocate_ssh_auth_sock (hostname)
 
 #fish_vi_key_bindings
 
-if which realpath > /dev/null
-    # FreeBSD
-    set -x GOPATH (realpath $HOME)
-else
-    # OS X (I'm lazy, I know realpath is not necessary then)
-    set -x GOPATH $HOME
-end
-
-
 for p in /usr/local/go/bin $HOME/bin
     if test -e $p
         set PATH $PATH $p

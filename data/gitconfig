@@ -65,3 +65,5 @@
 	cookiefile = ~/.gitcookies
 [help]
 	autocorrect = 10
+[init]
+	defaultBranch = main
