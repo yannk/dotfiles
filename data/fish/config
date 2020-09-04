@@ -4,8 +4,7 @@
 relocate_ssh_auth_sock (hostname)
 
 #fish_vi_key_bindings
-
-for p in /usr/local/go/bin $HOME/bin
+for p in $HOME/bin
     if test -e $p
         set PATH $PATH $p
     end
