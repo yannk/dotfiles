@@ -7,6 +7,7 @@ DOTFILES=$(pwd)/data
 # git
 ln -sf ${DOTFILES}/gitconfig ${HOME}/.gitconfig
 ln -sf ${DOTFILES}/gitignore ${HOME}/.gitignore
+ln -sf ${DOTFILES}/gitattributes ${HOME}/.gitattributes
 curl -o ${HOME}/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 
 
