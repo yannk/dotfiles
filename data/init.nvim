@@ -1,3 +1,4 @@
+let s:uname = system("uname -s")
 call plug#begin('~/.config/nvim/plugged')
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-fugitive'
@@ -23,7 +24,7 @@ Plug 'Shougo/echodoc.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ervandew/supertab'
 
-if !has('FreeBSD')
+if !(match(s:uname, 'FreeBSD') >= 0)
     Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 endif
 

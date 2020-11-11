@@ -10,6 +10,7 @@ for p in $HOME/bin
     end
 end
 
+alias ls=exa
 alias ci=vim
 alias gti=git
 alias igt=git
