@@ -43,6 +43,7 @@
 	change = gerrit change
 	gofmt = gerrit gofmt
 	commit = gerrit commit
+	hooks = gerrit hooks
 
 [core]
     editor = vim

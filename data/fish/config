@@ -1,4 +1,4 @@
-. $HOME/._z/fish
+zoxide init fish | source
 
 # relocate ssh
 relocate_ssh_auth_sock (hostname)
