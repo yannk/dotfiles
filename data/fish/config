@@ -4,7 +4,7 @@ zoxide init fish | source
 relocate_ssh_auth_sock (hostname)
 
 #fish_vi_key_bindings
-for p in $HOME/bin
+for p in $HOME/bin $HOME/go/bin
     if test -e $p
         set PATH $PATH $p
     end
@@ -54,3 +54,4 @@ set __fish_git_prompt_char_upstream_prefix ''
 if test -e ~/.iterm2_shell_integration.(basename $SHELL)
     source ~/.iterm2_shell_integration.(basename $SHELL)
 end
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths

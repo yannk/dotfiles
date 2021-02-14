@@ -23,6 +23,8 @@ Plug 'Shougo/echodoc.vim'
 "Plug 'Shougo/neosnippet-snippets'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ervandew/supertab'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 if !(match(s:uname, 'FreeBSD') >= 0)
     Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
@@ -146,8 +148,8 @@ augroup END
 autocmd FileType go let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
 
 " Sometimes when using both vim-go and syntastic Vim will start lagging while saving and opening files. The following fixes this:
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " make lnext work
 let g:syntastic_always_populate_loc_list = 1
