@@ -17,3 +17,5 @@ export MANPATH=/opt/local/man/:$MANPATH
 export LESS="-F -r -X"
 
 complete -C /usr/local/bin/vault vault
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
