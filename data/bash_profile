@@ -150,5 +150,3 @@ for extra_path in \
 done
 
 . $HOME/.relocate-ssh.bash
-
-source ~/._z/bash

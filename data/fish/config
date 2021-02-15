@@ -1,14 +1,15 @@
 zoxide init fish | source
+starship init fish | source
 
 # relocate ssh
 relocate_ssh_auth_sock (hostname)
 
-#fish_vi_key_bindings
 for p in $HOME/bin $HOME/go/bin
     if test -e $p
         set PATH $PATH $p
     end
 end
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 alias ls=exa
 alias ci=vim
@@ -18,8 +19,6 @@ alias gt=git
 alias gi=git
 alias vi=nvim
 alias vim=nvim
-alias qq="touch /tmp/q; tail -100f /tmp/q"
-alias rmqq="rm /tmp/q"
 alias k=kubectl
 alias kns=kubens
 alias kctx=kubectx
@@ -27,31 +26,9 @@ alias kctx=kubectx
 alias whoisa="whois -h whois.apple.com"
 
 # make C-c cancel the line instead of putting it in Normal mode
-bind -M insert \cc 'commandline ""'
-
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showupstream 'informative'
-#set __fish_git_prompt_show_informative_status 'yes'
-set __fish_git_prompt_color_branch yellow
-set __fish_git_prompt_color_upstream_ahead green
-set __fish_git_prompt_color_upstream_behind red
-set -e __fish_git_prompt_showuntrackedfiles
-
-set __fish_git_prompt_char_cleanstate '✔'
-set __fish_git_prompt_char_dirtystate '✚'
-set __fish_git_prompt_char_invalidstate '✖'
-set __fish_git_prompt_char_stagedstate '●'
-set __fish_git_prompt_char_stashstate '$'
-set __fish_git_prompt_char_stateseparator '|'
-set __fish_git_prompt_char_untrackedfiles '…'
-set __fish_git_prompt_char_upstream_ahead '↑'
-set __fish_git_prompt_char_upstream_behind '↓'
-set __fish_git_prompt_char_upstream_diverged '<>'
-set __fish_git_prompt_char_upstream_equal '='
-set __fish_git_prompt_char_upstream_prefix ''
+fish_vi_key_bindings
+#bind -M insert \cc 'commandline ""'
 
 if test -e ~/.iterm2_shell_integration.(basename $SHELL)
     source ~/.iterm2_shell_integration.(basename $SHELL)
 end
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
