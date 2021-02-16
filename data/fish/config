@@ -27,6 +27,11 @@ alias whoisa="whois -h whois.apple.com"
 
 # make C-c cancel the line instead of putting it in Normal mode
 fish_vi_key_bindings
+# I still press Emacs key bindings a lot, and I like it.
+bind -M insert \ca beginning-of-line
+bind -M insert \ce end-of-line
+bind -M insert \ck kill-line
+
 #bind -M insert \cc 'commandline ""'
 
 if test -e ~/.iterm2_shell_integration.(basename $SHELL)
