@@ -4,7 +4,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tpope/vim-markdown'
-    "Plug 'altercation/vim-colors-solarized'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'pangloss/vim-javascript'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
@@ -14,11 +13,14 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'sjl/vitality.vim'
     Plug 'airblade/vim-gitgutter'
     Plug 'keith/swift.vim'
-    Plug 'lifepillar/vim-solarized8'
 "   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+
+    "Plug 'altercation/vim-colors-solarized'
+    Plug 'KeitaNakamura/neodark.vim'
+    Plug 'lifepillar/vim-solarized8'
 
     if !(match(s:uname, 'FreeBSD') >= 0)
         Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
@@ -62,7 +64,14 @@ set background=dark
 "let g:solarized_termtrans=1
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
-colorscheme solarized8
+"colorscheme solarized8
+colorscheme neodark
+
+let g:lightline = {}
+let g:lightline.colorscheme = 'neodark'
+let g:neodark#use_256color = 1
+let g:neodark#terminal_transparent = 1
+let g:neodark#solid_vertsplit = 1
 
 set shiftwidth=4                " use indents of 4 spaces
 set tabstop=4                   " an indentation every four columns
