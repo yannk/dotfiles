@@ -1,0 +1,28 @@
+add_newline = false
+
+format = """
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$character"""
+
+[line_break]
+disabled = true
+
+[directory]
+truncation_symbol = "…/"
+fish_style_pwd_dir_length = 2

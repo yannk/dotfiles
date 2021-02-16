@@ -35,3 +35,5 @@ mkdir -p ${HOME}/.config/nvim
 ln -sf ${DOTFILES}/init.nvim ${HOME}/.config/nvim/init.vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+ln -sf ${DOTFILES}/starship.toml ${HOME}/.config/starship.toml
