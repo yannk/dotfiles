@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -euo pipefail
 
@@ -8,8 +8,6 @@ DOTFILES=$(pwd)/data
 ln -sf ${DOTFILES}/gitconfig ${HOME}/.gitconfig
 ln -sf ${DOTFILES}/gitignore ${HOME}/.gitignore
 ln -sf ${DOTFILES}/gitattributes ${HOME}/.gitattributes
-#curl -o ${HOME}/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-
 
 # vim
 ln -sf  ${DOTFILES}/vimrc ${HOME}/.vimrc
@@ -18,8 +16,6 @@ ln -sf  ${DOTFILES}/vimrc ${HOME}/.vimrc
 mkdir -p ${HOME}/.screen ${HOME}/.tmux
 ln -sf ${DOTFILES}/screenrc ${HOME}/.screenrc
 ln -sf ${DOTFILES}/tmux.conf ${HOME}/.tmux.conf
-# hopefully not needed anymore
-#ln -sf  ${DOTFILES}/termcaprc ${HOME}/.termcaprc
 
 # shells
 ln -sf ${DOTFILES}/bashrc ${HOME}/.bashrc
@@ -37,3 +33,12 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ln -sf ${DOTFILES}/starship.toml ${HOME}/.config/starship.toml
+
+if sw_vers >/dev/null 2>&1; then
+    # don't interfere with my quick typing in web terminals
+    defaults write -g ApplePressAndHoldEnabled -bool false
+
+    ln -sf ${DOTFILES}/iterm2 ${HOME}/.config/iterm2
+    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "${HOME}/.config/iterm2"
+    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+fi
