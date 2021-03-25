@@ -1,3 +1,5 @@
+set -U fish_greeting
+
 # relocate ssh
 relocate_ssh_auth_sock (hostname)
 
