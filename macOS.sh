@@ -10,6 +10,7 @@ brew install \
     hyperkit \
     jq \
     neovim \
+    node \
     ripgrep \
     starship \
     tmux \
@@ -26,3 +27,8 @@ brew install font-Fira-Code-nerd-font \
              font-inconsolata-go-nerd-font \
              font-inconsolata-nerd-font
 
+
+# for neovim
+python3 -m pip install --user --upgrade pynvim
+python2 -m pip install --user --upgrade pynvim
+npm install -g neovim

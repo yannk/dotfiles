@@ -38,7 +38,7 @@ if sw_vers >/dev/null 2>&1; then
     # don't interfere with my quick typing in web terminals
     defaults write -g ApplePressAndHoldEnabled -bool false
 
-    ln -sf ${DOTFILES}/iterm2 ${HOME}/.config/iterm2
+    ln -sfF ${DOTFILES}/iterm2 ${HOME}/.config/
     defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "${HOME}/.config/iterm2"
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 fi
