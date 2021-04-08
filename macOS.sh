@@ -20,6 +20,7 @@ brew install --cask rectangle
 brew install --cask iterm2
 brew install --cask docker
 brew install --cask wireshark
+brew install --cask maccy
 
 brew tap homebrew/cask-fonts
 brew install font-Fira-Code-nerd-font \
