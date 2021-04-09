@@ -29,6 +29,7 @@ ln -snfF ${DOTFILES}/fish/functions ${HOME}/.config/fish/functions
 
 mkdir -p ${HOME}/.config/nvim
 ln -sf ${DOTFILES}/init.nvim ${HOME}/.config/nvim/init.vim
+ln -sf ${DOTFILES}/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
