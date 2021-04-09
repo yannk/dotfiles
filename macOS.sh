@@ -14,6 +14,7 @@ brew install \
     ripgrep \
     starship \
     tmux \
+    tree \
     zoxide
 
 brew install --cask rectangle
