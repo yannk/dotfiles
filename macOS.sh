@@ -9,6 +9,7 @@ brew install \
     go \
     hyperkit \
     jq \
+    kubectx \
     neovim \
     node \
     ripgrep \

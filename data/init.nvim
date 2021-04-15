@@ -17,6 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    "Plug 'neovim/nvim-lspconfig'
 
     "Plug 'altercation/vim-colors-solarized'
     Plug 'KeitaNakamura/neodark.vim'
@@ -172,7 +173,7 @@ let g:go_echo_commands_disabled = ['godef', 'gopls']
 let g:go_echo_command_info = 0
 let g:go_echo_go_info = 0
 let g:go_code_completion_enabled = 0
-let g:go_gopls_enabled = 0
+let g:go_gopls_enabled = 1
 "let g:go_def_mode='gopls'
 "let g:go_info_mode='gopls'
 "let g:go_referrers_mode = 'gopls'
