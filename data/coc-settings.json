@@ -1,5 +1,8 @@
 {
-    "coc.preferences.hoverTarget": "float",
+    //"diagnostic.virtualText": true,
+    //"diagnostic.virtualTextCurrentLineOnly": true,
+    //"hover.target": "preview",
+    //"diagnostic.checkCurrentLine": true,
     //"diagnostic.errorSign": "✘",
     //"diagnostic.warningSign": "!",
     //"diagnostic.infoSign": "",
