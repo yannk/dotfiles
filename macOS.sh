@@ -6,6 +6,7 @@ brew install \
     exa \
     fish \
     fzf \
+    git \
     go \
     hyperkit \
     jq \
