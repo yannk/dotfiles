@@ -37,4 +37,7 @@ python3 -m pip install --user --upgrade pynvim
 python2 -m pip install --user --upgrade pynvim
 npm install -g neovim
 
+echo linking fish, sudo required:
 sudo ln -s $(brew --prefix fish)/bin/fish /usr/local/bin/fish
+
+go get github.com/nametake/golangci-lint-langserver
